@@ -6,10 +6,10 @@
             [(nzCollapsed)]="isCollapsed"
             [nzTrigger]="null">
     <div class="sidebar-logo">
-      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+      <img src="assets/img/forms.svg" alt="logo">
       <h1>Form Builder Demo</h1>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
@@ -46,6 +46,10 @@
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>
+        <div class="icons-credit">
+          Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+          from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
       </div>
     </nz-content>
   </nz-layout>

@@ -7,6 +7,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@border: 1px solid @light-grey-2;
+
 .app-layout {
   height: 100vh;
 }
@@ -15,7 +17,7 @@
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+  box-shadow: 2px 0 6px rgba(0, 21, 41, .2);
 }
 
 .header-trigger {
@@ -27,17 +29,19 @@
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: @purple;
 }
 
 .sidebar-logo {
   position: relative;
   height: 64px;
-  padding-left: 24px;
+  margin: 0 16px;
+  padding: 0 8px;
   overflow: hidden;
   line-height: 64px;
   background: @white;
   transition: all .3s;
+  border-bottom: @border;
 }
 
 .sidebar-logo img {
@@ -67,12 +71,12 @@ nz-header {
   height: 64px;
   padding: 0;
   background: @white;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+  border-bottom: @border;
 }
 
 .inner-content {
   padding: 24px;
-  background: @white;
+  background: @light-grey-1;
   height: 100%;
 
   .icons-credit {

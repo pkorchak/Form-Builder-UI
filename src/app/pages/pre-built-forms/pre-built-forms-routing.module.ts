@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PreBuiltFormsComponent } from './pre-built-forms.component';
+import { RouterModule, Routes } from '@angular/router';
+import { RegisterFormViewComponent } from './register/register-form-view.component';
 
 const routes: Routes = [
-  {path: '', component: PreBuiltFormsComponent},
+  {path: '', redirectTo: 'register'},
+  {path: 'register', component: RegisterFormViewComponent},
 ];
 
 @NgModule({

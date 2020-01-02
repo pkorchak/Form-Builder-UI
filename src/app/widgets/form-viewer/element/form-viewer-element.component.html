@@ -1,10 +1,13 @@
-<div>
-  <span *ngIf="element.required" class="required-sign">*</span>
-  {{element.label}}
-</div>
-<ng-container [ngSwitch]="element.type">
-  <ng-container *ngSwitchCase="'input'">
-    <input [formControl]="control"
-           [placeholder]="element.placeholder || ''">
+<div style="margin: 8px 15px">
+  <div class="label">
+    <span *ngIf="element.required" class="required-sign">*</span>
+    {{element.label}}
+  </div>
+  <ng-container [ngSwitch]="element.type">
+    <ng-container *ngSwitchCase="'input'">
+      <input nz-input
+             [formControl]="control"
+             [placeholder]="element.placeholder || ''">
+    </ng-container>
   </ng-container>
-</ng-container>
+</div>

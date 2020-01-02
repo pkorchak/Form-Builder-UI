@@ -2,16 +2,27 @@
 
 .form-container {
   height: 100%;
-  padding: 24px;
+  padding: 30px;
   background-color: @white;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 
   .form-name {
-    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid @light-grey-2;
+  }
+
+  .controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
   }
 
   .submit-btn {
     float: right;
+    width: 120px;
+    height: 34px;
+    font-size: 15px;
+    margin-top: 30px;
   }
 }

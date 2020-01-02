@@ -1,11 +1,17 @@
 <div class="form-container" [formGroup]="formGroup">
   <h2 class="form-name">{{formStructure?.name}}</h2>
-  <div *ngFor="let element of formStructure?.elements">
-    <app-form-viewer-element [element]="element"
-                             [control]="formGroup.get(element.name)">
-    </app-form-viewer-element>
+  <div class="controls-container">
+    <div *ngFor="let element of formStructure?.elements"
+         [style.width.%]="100 / formStructure.columnsNum">
+      <app-form-viewer-element [element]="element"
+                               [control]="formGroup.get(element.name)">
+      </app-form-viewer-element>
+    </div>
   </div>
-  <button class="submit-btn"
+  <button nz-button
+          class="submit-btn"
+          nzType="primary"
+          nzShape="round"
           [disabled]="formGroup.invalid"
           (click)="logForm()">
     Submit

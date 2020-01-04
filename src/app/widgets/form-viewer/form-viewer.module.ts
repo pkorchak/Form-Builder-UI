@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormViewerComponent } from './form-viewer.component';
 import { FormViewerElementComponent } from './element/form-viewer-element.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NzButtonModule, NzCheckboxModule, NzInputModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzCheckboxModule, NzDatePickerModule, NzInputModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
@@ -11,7 +11,8 @@ import { NzButtonModule, NzCheckboxModule, NzInputModule } from 'ng-zorro-antd';
     ReactiveFormsModule,
     NzInputModule,
     NzButtonModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzDatePickerModule
   ],
   declarations: [FormViewerComponent, FormViewerElementComponent],
   exports: [FormViewerComponent]

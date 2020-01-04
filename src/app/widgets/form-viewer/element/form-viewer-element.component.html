@@ -1,14 +1,20 @@
 <div style="margin: 8px 15px">
   <ng-container [ngSwitch]="element.type">
+
     <ng-container *ngSwitchCase="'input'">
-      <div class="label">
-        <span *ngIf="element.required" class="required-sign">*</span>
-        {{element.label}}
-      </div>
+      <ng-container *ngTemplateOutlet="label"></ng-container>
       <input nz-input
              [formControl]="element.formControl"
              [placeholder]="element.placeholder || ''">
     </ng-container>
+
+    <ng-container *ngSwitchCase="'date-picker'">
+      <ng-container *ngTemplateOutlet="label"></ng-container>
+      <nz-date-picker [formControl]="element.formControl"
+                      [nzPlaceHolder]="element.placeholder || ''">
+      </nz-date-picker>
+    </ng-container>
+
     <ng-container *ngSwitchCase="'checkbox'">
       <label nz-checkbox
              class="label"
@@ -16,5 +22,14 @@
         {{element.label}}
       </label>
     </ng-container>
+
   </ng-container>
 </div>
+
+
+<ng-template #label>
+  <div class="label">
+    <span *ngIf="element.required" class="required-sign">*</span>
+    {{element.label}}
+  </div>
+</ng-template>

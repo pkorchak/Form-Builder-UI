@@ -1,4 +1,5 @@
 export enum FormElementType {
   INPUT = 'input',
-  CHECKBOX = 'checkbox'
+  CHECKBOX = 'checkbox',
+  DATE_PICKER = 'date-picker'
 }

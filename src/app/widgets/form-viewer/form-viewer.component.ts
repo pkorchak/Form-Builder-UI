@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormStructure } from './model/form-structure';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -8,17 +8,23 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-viewer.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormViewerComponent implements OnInit {
+export class FormViewerComponent implements OnInit, OnChanges {
 
   @Input() formStructure: FormStructure;
 
   formGroup = new FormGroup({});
+
+  columnWidth: string;
 
   ngOnInit(): void {
     this.formStructure.elements.forEach(element =>
       this.formGroup.addControl(
         element.name,
         new FormControl(null, element.required ? Validators.required : null)));
+  }
+
+  ngOnChanges(): void {
+    this.columnWidth = 100 / this.formStructure.columnsNum + '%';
   }
 
   logForm(): void {

@@ -1,13 +1,20 @@
 <div style="margin: 8px 15px">
-  <div class="label">
-    <span *ngIf="element.required" class="required-sign">*</span>
-    {{element.label}}
-  </div>
   <ng-container [ngSwitch]="element.type">
     <ng-container *ngSwitchCase="'input'">
+      <div class="label">
+        <span *ngIf="element.required" class="required-sign">*</span>
+        {{element.label}}
+      </div>
       <input nz-input
              [formControl]="control"
              [placeholder]="element.placeholder || ''">
+    </ng-container>
+    <ng-container *ngSwitchCase="'checkbox'">
+      <label nz-checkbox
+             class="label"
+             [formControl]="control">
+        {{element.label}}
+      </label>
     </ng-container>
   </ng-container>
 </div>

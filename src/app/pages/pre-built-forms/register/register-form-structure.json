@@ -35,6 +35,11 @@
       "type": "input",
       "required": true,
       "placeholder": "Repeat password"
+    },
+    {
+      "label": "Accept our Terms and Conditions",
+      "name": "fc-6",
+      "type": "checkbox"
     }
   ]
 }

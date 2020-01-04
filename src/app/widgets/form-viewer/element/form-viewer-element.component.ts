@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { AbstractFormElement } from '../model/form-elements/abstract-form-element';
-import { FormControl } from '@angular/forms';
+import { AbstractFormElement } from '@model/form-elements/abstract-form-element';
 
 @Component({
   selector: 'app-form-viewer-element',
@@ -11,6 +10,5 @@ import { FormControl } from '@angular/forms';
 export class FormViewerElementComponent {
 
   @Input() element: AbstractFormElement;
-  @Input() control: FormControl;
 
 }

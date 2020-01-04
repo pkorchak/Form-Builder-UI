@@ -39,7 +39,8 @@
     {
       "label": "Accept our Terms and Conditions",
       "name": "fc-6",
-      "type": "checkbox"
+      "type": "checkbox",
+      "required": true
     }
   ]
 }

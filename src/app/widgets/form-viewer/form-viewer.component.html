@@ -4,8 +4,7 @@
     <div *ngFor="let element of formStructure?.elements"
          class="control-container"
          [style.width]="columnWidth">
-      <app-form-viewer-element [element]="element"
-                               [control]="formGroup.get(element.name)">
+      <app-form-viewer-element [element]="element">
       </app-form-viewer-element>
     </div>
   </div>

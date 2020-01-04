@@ -1,6 +1,7 @@
 import { FormElementType } from '../form-element-type';
+import { FormControl } from '@angular/forms';
 
-export class AbstractFormElement {
+export abstract class AbstractFormElement {
   /**
    * A label placed above the element's control
    */
@@ -21,4 +22,10 @@ export class AbstractFormElement {
    * Element's control placeholder
    */
   placeholder?: string;
+  /**
+   * Form control used in generated reactive form
+   */
+  formControl: FormControl;
+
+  abstract initFormControl(): void;
 }

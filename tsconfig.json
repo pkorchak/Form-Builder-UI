@@ -20,7 +20,9 @@
     ],
     "paths": {
       "@styles/*": ["app/styles/*"],
-      "@widgets/*": ["app/widgets/*"]
+      "@widgets/*": ["app/widgets/*"],
+      "@services/*": ["app/services/*"],
+      "@model/*": ["app/model/*"]
     }
   },
   "angularCompilerOptions": {

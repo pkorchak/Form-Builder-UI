@@ -6,13 +6,13 @@
         {{element.label}}
       </div>
       <input nz-input
-             [formControl]="control"
+             [formControl]="element.formControl"
              [placeholder]="element.placeholder || ''">
     </ng-container>
     <ng-container *ngSwitchCase="'checkbox'">
       <label nz-checkbox
              class="label"
-             [formControl]="control">
+             [formControl]="element.formControl">
         {{element.label}}
       </label>
     </ng-container>

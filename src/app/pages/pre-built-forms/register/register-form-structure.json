@@ -1,0 +1,40 @@
+{
+  "columnsNum": 2,
+  "name": "Create an account",
+  "elements": [
+    {
+      "label": "Email",
+      "name": "fc-1",
+      "type": "input",
+      "required": true,
+      "placeholder": "Enter email"
+    },
+    {
+      "label": "First Name",
+      "name": "fc-2",
+      "type": "input",
+      "required": true,
+      "placeholder": "Enter first name"
+    },
+    {
+      "label": "Last Name",
+      "name": "fc-3",
+      "type": "input",
+      "placeholder": "Enter last name"
+    },
+    {
+      "label": "Password",
+      "name": "fc-4",
+      "type": "input",
+      "required": true,
+      "placeholder": "Enter password"
+    },
+    {
+      "label": "Repeat Password",
+      "name": "fc-5",
+      "type": "input",
+      "required": true,
+      "placeholder": "Repeat password"
+    }
+  ]
+}

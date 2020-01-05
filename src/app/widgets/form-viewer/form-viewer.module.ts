@@ -4,6 +4,7 @@ import { FormViewerComponent } from './form-viewer.component';
 import { FormViewerElementComponent } from './element/form-viewer-element.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule, NzCheckboxModule, NzDatePickerModule, NzInputModule } from 'ng-zorro-antd';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { NzButtonModule, NzCheckboxModule, NzDatePickerModule, NzInputModule } f
     NzInputModule,
     NzButtonModule,
     NzCheckboxModule,
-    NzDatePickerModule
+    NzDatePickerModule,
+    PerfectScrollbarModule
   ],
   declarations: [FormViewerComponent, FormViewerElementComponent],
   exports: [FormViewerComponent]

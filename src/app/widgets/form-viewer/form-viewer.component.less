@@ -1,11 +1,16 @@
 @import '../../styles/global/_colors.less';
 
-.form-container {
+:host {
+  display: block;
   height: 100%;
-  padding: 30px;
   background-color: @white;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
+}
+
+.form-container {
+  padding: 30px;
+  overflow: auto;
 
   .form-name {
     margin-bottom: 25px;

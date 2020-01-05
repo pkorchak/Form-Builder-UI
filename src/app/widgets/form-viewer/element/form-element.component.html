@@ -3,24 +3,16 @@
 
     <ng-container *ngSwitchCase="'input'">
       <ng-container *ngTemplateOutlet="label"></ng-container>
-      <input nz-input
-             [formControl]="element.formControl"
-             [placeholder]="element.placeholder || ''">
+      <app-input-form-element [element]="element"></app-input-form-element>
     </ng-container>
 
     <ng-container *ngSwitchCase="'date-picker'">
       <ng-container *ngTemplateOutlet="label"></ng-container>
-      <nz-date-picker [formControl]="element.formControl"
-                      [nzPlaceHolder]="element.placeholder || ''">
-      </nz-date-picker>
+      <app-date-picker-form-element [element]="element"></app-date-picker-form-element>
     </ng-container>
 
     <ng-container *ngSwitchCase="'checkbox'">
-      <label nz-checkbox
-             class="label"
-             [formControl]="element.formControl">
-        {{element.label}}
-      </label>
+      <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
     </ng-container>
 
   </ng-container>

@@ -5,8 +5,8 @@
       <div *ngFor="let element of formStructure?.elements"
            class="control-container"
            [style.width]="columnWidth">
-        <app-form-viewer-element [element]="element">
-        </app-form-viewer-element>
+        <app-form-element [element]="element">
+        </app-form-element>
       </div>
     </div>
     <button nz-button

@@ -6,6 +6,7 @@
       "label": "Email",
       "name": "fc-1",
       "type": "input",
+      "inputType": "email",
       "required": true,
       "placeholder": "Enter email"
     },
@@ -32,6 +33,7 @@
       "label": "Password",
       "name": "fc-5",
       "type": "input",
+      "inputType": "password",
       "required": true,
       "placeholder": "Enter password"
     },
@@ -39,6 +41,7 @@
       "label": "Repeat Password",
       "name": "fc-6",
       "type": "input",
+      "inputType": "password",
       "required": true,
       "placeholder": "Repeat password"
     },

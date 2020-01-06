@@ -14,6 +14,10 @@
         <i nz-icon nzType="dashboard"></i>
         <a routerLink="/dashboard">Dashboard</a>
       </li>
+      <li nz-menu-item nzMatchRouter title="Create Form">
+        <i nz-icon nzType="form"></i>
+        <a routerLink="/create">Create Form</a>
+      </li>
       <li nz-submenu nzOpen nzTitle="Pre-Built Forms" nzIcon="container" title="Pre-Built Forms">
         <ul>
           <li nz-menu-item nzMatchRouter>
@@ -32,11 +36,10 @@
                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'">
             </i>
         </span>
-        <button nz-button
+        <button nz-button nzShape="circle"
                 class="create-form-btn"
-                nzShape="circle"
-                nz-tooltip
-                nzTooltipTitle="Create Form"
+                routerLink="/create"
+                nz-tooltip nzTooltipTitle="Create Form"
                 nzTooltipPlacement="bottomRight">
           <i nz-icon nzType="form"></i>
         </button>

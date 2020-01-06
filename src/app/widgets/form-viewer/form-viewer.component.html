@@ -1,21 +1,23 @@
-<perfect-scrollbar>
-  <div [formGroup]="formGroup" class="form-container">
-    <h2 class="form-name">{{formStructure?.name}}</h2>
-    <div class="controls-container">
-      <div *ngFor="let element of formStructure?.elements"
-           class="control-container"
-           [style.width]="columnWidth">
-        <app-form-element [element]="element">
-        </app-form-element>
+<div class="form-container">
+  <perfect-scrollbar>
+    <div [formGroup]="formGroup" class="form-content">
+      <h2 class="form-name">{{formStructure?.name}}</h2>
+      <div class="controls-container">
+        <div *ngFor="let element of formStructure?.elements"
+             class="control-container"
+             [style.width]="columnWidth">
+          <app-form-element [element]="element">
+          </app-form-element>
+        </div>
       </div>
+      <button nz-button
+              class="submit-btn"
+              nzType="primary"
+              nzShape="round"
+              [disabled]="formGroup.invalid"
+              (click)="logForm()">
+        Submit
+      </button>
     </div>
-    <button nz-button
-            class="submit-btn"
-            nzType="primary"
-            nzShape="round"
-            [disabled]="formGroup.invalid"
-            (click)="logForm()">
-      Submit
-    </button>
-  </div>
-</perfect-scrollbar>
+  </perfect-scrollbar>
+</div>

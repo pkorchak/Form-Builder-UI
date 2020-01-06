@@ -5,7 +5,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-form-viewer',
   templateUrl: './form-viewer.component.html',
-  styleUrls: ['./form-viewer.component.less'],
+  styleUrls: ['./form-viewer.component.less', '../../styles/modules/_form-block.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormViewerComponent implements OnInit, OnChanges {

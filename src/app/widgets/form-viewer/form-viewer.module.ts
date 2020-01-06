@@ -9,15 +9,19 @@ import { InputFormElementComponent } from './element/input/input-form-element.co
 import { DatePickerFormElementComponent } from './element/date-picker/date-picker-form-element.component';
 import { CheckboxFormElementComponent } from './element/checkbox/checkbox-form-element.component';
 
+const ANT_DESIGN_MODULES = [
+  NzInputModule,
+  NzButtonModule,
+  NzCheckboxModule,
+  NzDatePickerModule
+];
+
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    NzInputModule,
-    NzButtonModule,
-    NzCheckboxModule,
-    NzDatePickerModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    ANT_DESIGN_MODULES
   ],
   declarations: [
     FormViewerComponent,

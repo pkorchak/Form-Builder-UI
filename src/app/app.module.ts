@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IconsProviderModule } from './icons-provider.module';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { NZ_I18N, en_US, NzToolTipModule, NzLayoutModule, NzMenuModule, NzIconModule, NzButtonModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,14 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 
 registerLocaleData(en);
+
+const ANT_DESIGN_MODULES = [
+  NzToolTipModule,
+  NzLayoutModule,
+  NzMenuModule,
+  NzIconModule,
+  NzButtonModule
+];
 
 @NgModule({
   declarations: [
@@ -21,10 +29,10 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
-    NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ANT_DESIGN_MODULES
   ],
   providers: [{provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]

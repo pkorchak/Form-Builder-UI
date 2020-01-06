@@ -29,9 +29,17 @@
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
             <i class="trigger"
                nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'">
+            </i>
         </span>
+        <button nz-button
+                class="create-form-btn"
+                nzShape="circle"
+                nz-tooltip
+                nzTooltipTitle="Create Form"
+                nzTooltipPlacement="bottomRight">
+          <i nz-icon nzType="form"></i>
+        </button>
       </div>
     </nz-header>
     <nz-content>

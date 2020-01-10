@@ -24,6 +24,10 @@ export class FormElementsFactory {
         break;
       case FormElementType.DATE_PICKER:
         elementInstance = map(element, new DatePickerFormElement());
+        break;
+      default:
+        throw new TypeError(`Unknown type "${element.type}". Valid values are ${Object.keys(FormElementType)
+          .map(key => FormElementType[key])}`);
     }
     elementInstance.initFormControl();
 

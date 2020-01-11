@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormStructure } from '@model/form-structure';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-editor',
@@ -21,7 +21,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.form = this.fb.group({
-      name: this.formStructure.name,
+      name: [this.formStructure.name, [Validators.required]],
       columnsNum: this.formStructure.columnsNum,
       elements: this.formElements
     });
@@ -29,7 +29,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.formStructure.elements.forEach(element => {
       element.initFormControl();
       this.formElements.push(this.fb.group({
-        label: element.label,
+        label: [element.label, [Validators.required]],
         type: element.type
       }));
     });

@@ -1,13 +1,10 @@
 <div class="form-container">
   <perfect-scrollbar>
     <div [formGroup]="form" class="form-content">
-      <div class="form-editor-input">
-        <input class="form-name editable"
-               nz-input
-               formControlName="name"
-               (focus)="selectInputContent($event)">
-        <div class="input-underline"></div>
-      </div>
+      <app-editable-label [parentFormControl]="form.get('name')"
+                          [options]="{fontSize: '21px', borderBottom: '1px solid #e8e8e8'}"
+                          style="margin-bottom: 25px">
+      </app-editable-label>
       <div class="controls-container">
         <div *ngFor="let element of formStructure.elements"
              class="control-container"

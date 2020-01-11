@@ -1,0 +1,39 @@
+@import '../../../styles/global/_colors.less';
+
+:host {
+  position: relative;
+  display: block;
+}
+
+input {
+  border: none;
+  border-radius: 0;
+  padding: 4px 0;
+  transition: none;
+
+  &:focus {
+    box-shadow: unset !important;
+
+    + .input-underline {
+      .growing();
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: @blueviolet;
+    }
+  }
+}
+
+.growing {
+  animation: grow .2s;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -14,7 +14,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   columnWidth: string;
   form: FormGroup;
-  formElements =  new FormArray([]);
+  formElements = new FormArray([]);
 
   constructor(private fb: FormBuilder) {
   }
@@ -37,10 +37,6 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.columnWidth = 100 / this.formStructure.columnsNum + '%';
-  }
-
-  selectInputContent($event) {
-    $event.target.select();
   }
 
   logForm() {

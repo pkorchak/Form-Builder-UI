@@ -15,17 +15,11 @@ export class CreateFormComponent {
 
   formStructure: FormStructure = {
     columnsNum: 1,
-    name: 'Create an account',
+    name: 'New Form',
     elements: [
       this.formElementsFactory.createInstance({
-        label: 'Email',
-        type: FormElementType.INPUT,
-        required: true
-      }),
-      this.formElementsFactory.createInstance({
-        label: 'First Name',
-        type: FormElementType.DATE_PICKER,
-        required: true
+        label: 'New Field',
+        type: FormElementType.INPUT
       })
     ]
   };

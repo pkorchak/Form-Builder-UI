@@ -1,26 +1,26 @@
-<div class="form-container">
-  <perfect-scrollbar>
-    <div [formGroup]="form" class="form-content">
-      <app-editable-label [parentFormControl]="form.get('name')"
-                          [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
-                          style="margin-bottom: 25px">
-      </app-editable-label>
-      <div class="controls-container">
-        <div *ngFor="let element of formStructure.elements, let index = index"
-             class="control-container"
-             [style.width]="columnWidth">
-          <app-editable-form-element [element]="element"
-                                     [elementFormGroup]="formElements.at(index)">
-          </app-editable-form-element>
-        </div>
-      </div>
-      <!--TODO Replace by "Show Form" button or smth like that-->
-      <button nz-button
-              nzType="primary"
-              nzShape="round"
-              (click)="logForm()">
-        Log Form
-      </button>
+<ng-container [formGroup]="form">
+  <app-editable-label [parentFormControl]="form.get('name')"
+                      [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
+                      style="margin-bottom: 25px">
+  </app-editable-label>
+
+  <div class="controls-container">
+    <div *ngFor="let element of formStructure.elements, let index = index"
+         class="control-container"
+         [style.width]="columnWidth">
+      <app-editable-form-element [element]="element"
+                                 [elementFormGroup]="formElements.at(index)">
+      </app-editable-form-element>
     </div>
-  </perfect-scrollbar>
-</div>
+  </div>
+
+  <button nz-button
+          class="final-action-btn"
+          nzType="primary"
+          nzShape="round"
+          [disabled]="form.invalid"
+          (click)="showFormPreviewClick.emit(form.value)">
+    <i nz-icon nzType="eye"></i> Show form preview
+  </button>
+</ng-container>
+

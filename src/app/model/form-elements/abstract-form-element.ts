@@ -7,10 +7,6 @@ export abstract class AbstractFormElement {
    */
   label: string;
   /**
-   * Element's control name (unique for the given form)
-   */
-  name: string;
-  /**
    * Type of the element's control like 'input', 'textarea', etc.
    */
   type: FormElementType;

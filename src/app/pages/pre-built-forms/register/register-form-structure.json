@@ -4,7 +4,6 @@
   "elements": [
     {
       "label": "Email",
-      "name": "fc-1",
       "type": "input",
       "inputType": "email",
       "required": true,
@@ -12,26 +11,22 @@
     },
     {
       "label": "Birth Date",
-      "name": "fc-2",
       "type": "date-picker",
       "placeholder": "Select birth date"
     },
     {
       "label": "First Name",
-      "name": "fc-3",
       "type": "input",
       "required": true,
       "placeholder": "Enter first name"
     },
     {
       "label": "Last Name",
-      "name": "fc-4",
       "type": "input",
       "placeholder": "Enter last name"
     },
     {
       "label": "Password",
-      "name": "fc-5",
       "type": "input",
       "inputType": "password",
       "required": true,
@@ -39,7 +34,6 @@
     },
     {
       "label": "Repeat Password",
-      "name": "fc-6",
       "type": "input",
       "inputType": "password",
       "required": true,
@@ -47,7 +41,6 @@
     },
     {
       "label": "Accept our Terms and Conditions",
-      "name": "fc-7",
       "type": "checkbox",
       "required": true
     }

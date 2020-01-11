@@ -5,13 +5,15 @@ import { RegisterFormViewComponent } from './register/register-form-view.compone
 import { FormViewerModule } from '@widgets/form-viewer';
 import { FormStructureMapper } from '@services/form-structure-mapper';
 import { FormElementsFactory } from '@services/form-elements-factory';
+import { FormContainerModule } from '@widgets/form-container/form-container.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     PreBuiltFormsRoutingModule,
-    FormViewerModule
+    FormViewerModule,
+    FormContainerModule
   ],
   declarations: [RegisterFormViewComponent],
   providers: [

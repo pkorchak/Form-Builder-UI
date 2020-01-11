@@ -5,7 +5,11 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-form-viewer',
   templateUrl: './form-viewer.component.html',
-  styleUrls: ['./form-viewer.component.less', '../../styles/modules/_form-block.less'],
+  styleUrls: [
+    './form-viewer.component.less',
+    '../../styles/modules/_form-block.less',
+    '../../styles/modules/_buttons.less'
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormViewerComponent implements OnInit, OnChanges {
@@ -18,7 +22,7 @@ export class FormViewerComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.formStructure.elements
-      .forEach(element => this.formGroup.addControl(element.name, element.formControl));
+      .forEach((element, index) => this.formGroup.addControl(index + '', element.formControl));
   }
 
   ngOnChanges(): void {

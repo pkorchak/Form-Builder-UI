@@ -1,16 +1,22 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormStructure } from '@model/form-structure';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-editor',
   templateUrl: './form-editor.component.html',
-  styleUrls: ['./form-editor.component.less', '../../styles/modules/_form-block.less'],
+  styleUrls: [
+    './form-editor.component.less',
+    '../../styles/modules/_form-block.less',
+    '../../styles/modules/_buttons.less'
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormEditorComponent implements OnInit, OnChanges {
 
   @Input() formStructure: FormStructure;
+
+  @Output() showFormPreviewClick = new EventEmitter();
 
   columnWidth: string;
   form: FormGroup;
@@ -37,10 +43,6 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.columnWidth = 100 / this.formStructure.columnsNum + '%';
-  }
-
-  logForm() {
-    console.log(this.form);
   }
 
 }

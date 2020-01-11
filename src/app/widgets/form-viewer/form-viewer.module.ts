@@ -30,7 +30,7 @@ const ANT_DESIGN_MODULES = [
     CheckboxFormElementComponent,
     DatePickerFormElementComponent
   ],
-  exports: [FormViewerComponent, FormElementComponent]
+  exports: [FormViewerComponent]
 })
 export class FormViewerModule {
 }

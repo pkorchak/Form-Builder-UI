@@ -2,16 +2,16 @@
   <perfect-scrollbar>
     <div [formGroup]="form" class="form-content">
       <app-editable-label [parentFormControl]="form.get('name')"
-                          [options]="{fontSize: '21px', borderBottom: '1px solid #e8e8e8'}"
+                          [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
                           style="margin-bottom: 25px">
       </app-editable-label>
       <div class="controls-container">
-        <div *ngFor="let element of formStructure.elements"
+        <div *ngFor="let element of formStructure.elements, let index = index"
              class="control-container"
              [style.width]="columnWidth">
-          <!--TODO Replace by form element with editor controls-->
-          <app-form-element [element]="element">
-          </app-form-element>
+          <app-editable-form-element [element]="element"
+                                     [elementFormGroup]="formElements.at(index)">
+          </app-editable-form-element>
         </div>
       </div>
       <!--TODO Replace by "Show Form" button or smth like that-->

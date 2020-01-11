@@ -3,18 +3,27 @@
 :host {
   position: relative;
   display: block;
+  width: 100%;
 }
 
 input {
-  border: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom-color: @white;
   border-radius: 0;
   padding: 4px 0;
   transition: none;
 
+  &:hover {
+    transition: .2s;
+    border-bottom-color: tint(@blueviolet, 50%) !important;
+  }
+
   &:focus {
     box-shadow: unset !important;
 
-    + .input-underline {
+    + .focus-underline {
       .growing();
       position: absolute;
       bottom: 0;
@@ -26,7 +35,7 @@ input {
 }
 
 .growing {
-  animation: grow .2s;
+  animation: grow .3s;
 }
 
 @keyframes grow {

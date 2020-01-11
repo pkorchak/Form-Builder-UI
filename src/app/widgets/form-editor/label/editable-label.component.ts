@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
 export class EditableLabelComponent {
 
   @Input() parentFormControl: FormControl;
-  @Input() options: EditableLabelOptions;
+  @Input() options: EditableLabelOptions = {};
 
   selectInputContent($event) {
     $event.target.select();
@@ -22,5 +22,5 @@ export interface EditableLabelOptions {
   color?: string;
   height?: string;
   fontSize?: string;
-  borderBottom?: string;
+  borderBottomColor?: string;
 }

@@ -1,0 +1,8 @@
+<input nz-input
+       [formControl]="parentFormControl"
+       [style.color]="options.color"
+       [style.height]="options.height"
+       [style.fontSize]="options.fontSize"
+       [style.borderBottomColor]="options.borderBottomColor"
+       (focus)="selectInputContent($event)">
+<div class="focus-underline"></div>

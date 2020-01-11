@@ -1,0 +1,25 @@
+<div style="margin: 8px 15px">
+  <ng-container [ngSwitch]="element.type">
+
+    <ng-container *ngSwitchCase="'input'">
+      <ng-container *ngTemplateOutlet="label"></ng-container>
+      <app-input-mockup [element]="element"></app-input-mockup>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'date-picker'">
+      <ng-container *ngTemplateOutlet="label"></ng-container>
+      <app-date-picker-mockup [element]="element"></app-date-picker-mockup>
+    </ng-container>
+
+  </ng-container>
+</div>
+
+
+<ng-template #label>
+  <div class="label">
+    <span *ngIf="element.required" class="required-sign">*</span>
+    <app-editable-label [parentFormControl]="getFormControl('label')"
+                        [options]="{fontSize: '13.5px', height: '20px'}">
+    </app-editable-label>
+  </div>
+</ng-template>

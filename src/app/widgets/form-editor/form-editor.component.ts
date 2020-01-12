@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormStructure } from '@model/form-structure';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormElementType } from '@model/form-element-type';
 
 @Component({
   selector: 'app-form-editor',
@@ -18,9 +19,10 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   @Output() showFormPreviewClick = new EventEmitter();
 
-  columnWidth: string;
   form: FormGroup;
   formElements = new FormArray([]);
+  formName: FormControl;
+  columnWidth: string;
 
   constructor(private fb: FormBuilder) {
   }
@@ -31,6 +33,8 @@ export class FormEditorComponent implements OnInit, OnChanges {
       columnsNum: this.formStructure.columnsNum,
       elements: this.formElements
     });
+
+    this.formName = this.form.get('name') as FormControl;
 
     this.formStructure.elements.forEach(element => {
       element.initFormControl();
@@ -47,6 +51,13 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   deleteElement(index: number) {
     this.formElements.removeAt(index);
+  }
+
+  addElement() {
+    this.formElements.push(this.fb.group({
+      label: ['New Field', [Validators.required]],
+      type: FormElementType.INPUT
+    }));
   }
 
 }

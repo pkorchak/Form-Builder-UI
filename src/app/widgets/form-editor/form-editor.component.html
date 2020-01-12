@@ -1,5 +1,5 @@
 <ng-container [formGroup]="form">
-  <app-editable-label [parentFormControl]="form.get('name')"
+  <app-editable-label [parentFormControl]="formName"
                       [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
                       style="margin-bottom: 25px">
   </app-editable-label>
@@ -8,10 +8,19 @@
     <div *ngFor="let element of formElements.controls, let index = index"
          class="control-container"
          [style.width]="columnWidth">
-      <app-editable-form-element [element]="formStructure.elements[index]"
-                                 [elementFormGroup]="element"
+      <app-editable-form-element [element]="element"
                                  (deleteElement)="deleteElement(index)">
       </app-editable-form-element>
+    </div>
+
+    <div class="control-container">
+      <i nz-icon class="add-element"
+         nz-tooltip="Add new element"
+         nzTooltipPlacement="right"
+         nzType="plus-circle"
+         nzTheme="twotone"
+         (click)="addElement()">
+      </i>
     </div>
   </div>
 

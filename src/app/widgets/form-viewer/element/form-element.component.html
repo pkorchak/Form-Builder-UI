@@ -1,21 +1,19 @@
-<div style="margin: 8px 15px">
-  <ng-container [ngSwitch]="element.type">
+<div [ngSwitch]="element.type">
 
-    <ng-container *ngSwitchCase="'input'">
-      <ng-container *ngTemplateOutlet="label"></ng-container>
-      <app-input-form-element [element]="element"></app-input-form-element>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'date-picker'">
-      <ng-container *ngTemplateOutlet="label"></ng-container>
-      <app-date-picker-form-element [element]="element"></app-date-picker-form-element>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'checkbox'">
-      <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
-    </ng-container>
-
+  <ng-container *ngSwitchCase="'input'">
+    <ng-container *ngTemplateOutlet="label"></ng-container>
+    <app-input-form-element [element]="element"></app-input-form-element>
   </ng-container>
+
+  <ng-container *ngSwitchCase="'date-picker'">
+    <ng-container *ngTemplateOutlet="label"></ng-container>
+    <app-date-picker-form-element [element]="element"></app-date-picker-form-element>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'checkbox'">
+    <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
+  </ng-container>
+
 </div>
 
 

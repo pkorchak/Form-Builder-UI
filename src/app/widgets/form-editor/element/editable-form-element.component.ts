@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { AbstractFormElement } from '@model/form-elements/abstract-form-element';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,14 +7,24 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./editable-form-element.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EditableFormElementComponent {
+export class EditableFormElementComponent implements OnChanges {
 
-  @Input() element: AbstractFormElement;
-  @Input() elementFormGroup: FormGroup;
+  @Input() element: FormGroup;
 
   @Output() deleteElement = new EventEmitter();
 
-  getFormControl(name: string): FormControl {
-    return this.elementFormGroup.get(name) as FormControl;
+  placeholder: string;
+  required: boolean;
+  type: string;
+  labelFormControl: FormControl;
+
+  ngOnChanges(): void {
+    const placeholderFormControl = this.element.get('placeholder');
+    const requiredFormControl = this.element.get('required');
+    const typeFormControl = this.element.get('type');
+    this.placeholder = placeholderFormControl && placeholderFormControl.value;
+    this.required = requiredFormControl && requiredFormControl.value;
+    this.type = typeFormControl && typeFormControl.value;
+    this.labelFormControl = this.element.get('label') as FormControl;
   }
 }

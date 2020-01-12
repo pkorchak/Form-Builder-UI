@@ -9,7 +9,8 @@ import {
   EyeOutline,
   FormOutline,
   MenuFoldOutline,
-  MenuUnfoldOutline
+  MenuUnfoldOutline,
+  PlusCircleTwoTone
 } from '@ant-design/icons-angular/icons';
 
 const icons = [
@@ -20,7 +21,8 @@ const icons = [
   ContainerOutline,
   ArrowLeftOutline,
   EyeOutline,
-  DeleteTwoTone
+  DeleteTwoTone,
+  PlusCircleTwoTone
 ];
 
 @NgModule({

@@ -21,5 +21,12 @@
     <app-editable-label [parentFormControl]="getFormControl('label')"
                         [options]="{fontSize: '13.5px', height: '20px'}">
     </app-editable-label>
+    <i nz-icon class="delete-icon"
+       nz-tooltip="Delete"
+       nzType="delete"
+       nzTheme="twotone"
+       nzTwotoneColor="red"
+       (click)="deleteElement.emit()">
+    </i>
   </div>
 </ng-template>

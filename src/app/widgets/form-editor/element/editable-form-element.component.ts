@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractFormElement } from '@model/form-elements/abstract-form-element';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -12,6 +12,8 @@ export class EditableFormElementComponent {
 
   @Input() element: AbstractFormElement;
   @Input() elementFormGroup: FormGroup;
+
+  @Output() deleteElement = new EventEmitter();
 
   getFormControl(name: string): FormControl {
     return this.elementFormGroup.get(name) as FormControl;

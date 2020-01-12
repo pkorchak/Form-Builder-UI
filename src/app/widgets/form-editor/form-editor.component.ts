@@ -45,4 +45,8 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.columnWidth = 100 / this.formStructure.columnsNum + '%';
   }
 
+  deleteElement(index: number) {
+    this.formElements.removeAt(index);
+  }
+
 }

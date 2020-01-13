@@ -14,13 +14,17 @@
     </div>
 
     <div class="control-container">
-      <i nz-icon class="add-element"
-         nz-tooltip="Add new element"
-         nzTooltipPlacement="right"
-         nzType="plus-circle"
-         nzTheme="twotone"
-         (click)="addElement()">
-      </i>
+      <button nz-button class="add-element-btn"
+              nzShape="circle"
+              nz-tooltip="Add new element"
+              nzTooltipPlacement="right"
+              (click)="addElement()">
+        <i nz-icon
+           nzType="plus-circle"
+           nzTheme="twotone"
+           nzTwotoneColor="#00cc66">
+        </i>
+      </button>
     </div>
   </div>
 

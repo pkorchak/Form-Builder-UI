@@ -11,8 +11,17 @@
   }
 }
 
-.delete-icon {
+.delete-btn {
+  height: 16px;
+  width: 16px;
   font-size: 16px;
-  margin: 4px 3px 0;
-  cursor: pointer;
+  line-height: 16px;
+  border: 2px solid white;
+  margin: 0 3px;
+
+  &:focus {
+    font-size: 20px;
+    border-width: 0;
+    transition: .2s;
+  }
 }

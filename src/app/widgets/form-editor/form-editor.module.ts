@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormEditorComponent } from './form-editor.component';
 import { NzButtonModule, NzDatePickerModule, NzIconModule, NzInputModule, NzToolTipModule } from 'ng-zorro-antd';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormElementsFactory } from '@services/form-elements-factory';
 import { EditableLabelComponent } from '@widgets/form-editor/label/editable-label.component';
 import { EditableFormElementComponent } from './element/editable-form-element.component';
 import { InputMockupComponent } from '@widgets/form-editor/element/mockups/input-mockup.component';
@@ -24,7 +23,6 @@ const ANT_DESIGN_MODULES = [NzButtonModule, NzInputModule, NzDatePickerModule, N
     InputMockupComponent,
     DatePickerMockupComponent
   ],
-  providers: [FormElementsFactory],
   exports: [FormEditorComponent]
 })
 export class FormEditorModule {

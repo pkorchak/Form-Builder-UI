@@ -9,7 +9,7 @@ const map = (object: any, elementInstance: AbstractFormElement) =>
   Object.assign(elementInstance, ...Object.keys(object)
     .map(key => ({[key]: (object[key])})));
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class FormElementsFactory {
 
   public createInstance(element: any): AbstractFormElement {

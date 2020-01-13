@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormElementsFactory } from './form-elements-factory';
 import { FormStructure } from '@model/form-structure';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class FormStructureMapper {
 
   constructor(private formElementsFactory: FormElementsFactory) {

@@ -6,6 +6,7 @@ import {
   ContainerOutline,
   DashboardOutline,
   DeleteTwoTone,
+  ExclamationCircleOutline,
   EyeOutline,
   FormOutline,
   MenuFoldOutline,
@@ -22,7 +23,8 @@ const icons = [
   ArrowLeftOutline,
   EyeOutline,
   DeleteTwoTone,
-  PlusCircleTwoTone
+  PlusCircleTwoTone,
+  ExclamationCircleOutline
 ];
 
 @NgModule({

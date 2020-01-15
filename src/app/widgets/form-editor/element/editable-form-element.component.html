@@ -15,11 +15,19 @@
 
 <ng-template #label>
   <div class="label">
-    <span *ngIf="required" class="required-sign">*</span>
     <app-editable-label [parentFormControl]="labelFormControl"
                         [options]="{fontSize: '13.5px', height: '20px'}">
     </app-editable-label>
-    <button nz-button class="delete-btn"
+    <button nz-button class="small-icon-btn"
+            [nz-tooltip]="required ? 'Mark as optional' : 'Mark as required'"
+            (click)="updateRequired()">
+      <i nz-icon
+         nzType="exclamation-circle"
+         [style.color]="required ? 'red' : ''"
+         nzTheme="outline">
+      </i>
+    </button>
+    <button nz-button class="small-icon-btn"
             nz-tooltip="Delete"
             (click)="deleteElement.emit()">
       <i nz-icon

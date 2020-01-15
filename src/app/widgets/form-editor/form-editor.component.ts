@@ -40,7 +40,8 @@ export class FormEditorComponent implements OnInit, OnChanges {
       element.initFormControl();
       this.formElements.push(this.fb.group({
         label: [element.label, [Validators.required]],
-        type: element.type
+        type: element.type,
+        required: element.required
       }));
     });
   }
@@ -56,7 +57,8 @@ export class FormEditorComponent implements OnInit, OnChanges {
   addElement() {
     this.formElements.push(this.fb.group({
       label: ['New Field', [Validators.required]],
-      type: FormElementType.INPUT
+      type: FormElementType.INPUT,
+      required: false
     }));
   }
 

@@ -27,4 +27,9 @@ export class EditableFormElementComponent implements OnChanges {
     this.type = typeFormControl && typeFormControl.value;
     this.labelFormControl = this.element.get('label') as FormControl;
   }
+
+  updateRequired() {
+    this.required = !this.required;
+    this.element.patchValue({required: this.required});
+  }
 }

@@ -50,10 +50,6 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.columnWidth = 100 / this.formStructure.columnsNum + '%';
   }
 
-  deleteElement(index: number) {
-    this.formElements.removeAt(index);
-  }
-
   addElement() {
     this.formElements.push(this.fb.group({
       label: ['New Field', [Validators.required]],
@@ -62,4 +58,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
     }));
   }
 
+  deleteElement(index: number) {
+    this.formElements.removeAt(index);
+  }
 }

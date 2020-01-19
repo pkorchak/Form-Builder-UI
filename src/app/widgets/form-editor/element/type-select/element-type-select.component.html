@@ -1,0 +1,20 @@
+<nz-select class="element-type-select"
+           [formControl]="type"
+           nz-tooltip="Change type"
+           nzDropdownClassName="select-type"
+           [nzDropdownStyle]="{width: '120px', marginLeft: '-83px'}"
+           [nzCustomTemplate]="selectTmp">
+  <ng-container *ngFor="let option of options">
+    <nz-option nzCustomContent [nzValue]="option.value">
+      <div class="option-icon-container">
+        <i nz-icon class="option-icon"
+           [nzType]="option.value">
+        </i>
+      </div>{{option.label}}
+    </nz-option>
+  </ng-container>
+</nz-select>
+
+<ng-template #selectTmp>
+  <i nz-icon [nzType]="type.value"></i>
+</ng-template>

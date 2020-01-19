@@ -15,17 +15,16 @@ export class EditableFormElementComponent implements OnChanges {
 
   placeholder: string;
   required: boolean;
-  type: string;
   labelFormControl: FormControl;
+  typeFormControl: FormControl;
 
   ngOnChanges(): void {
     const placeholderFormControl = this.element.get('placeholder');
     const requiredFormControl = this.element.get('required');
-    const typeFormControl = this.element.get('type');
+    this.labelFormControl = this.element.get('label') as FormControl;
+    this.typeFormControl = this.element.get('type') as FormControl;
     this.placeholder = placeholderFormControl && placeholderFormControl.value;
     this.required = requiredFormControl && requiredFormControl.value;
-    this.type = typeFormControl && typeFormControl.value;
-    this.labelFormControl = this.element.get('label') as FormControl;
   }
 
   updateRequired() {

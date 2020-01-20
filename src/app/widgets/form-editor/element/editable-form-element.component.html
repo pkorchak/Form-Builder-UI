@@ -1,30 +1,30 @@
 <div [ngSwitch]="typeFormControl.value">
 
   <ng-container *ngSwitchCase="'input'">
-    <div class="label">
-      <ng-container *ngTemplateOutlet="label"></ng-container>
+    <div class="main-controls">
+      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
     </div>
     <app-input-mockup [placeholder]="placeholder"></app-input-mockup>
   </ng-container>
 
   <ng-container *ngSwitchCase="'date-picker'">
-    <div class="label">
-      <ng-container *ngTemplateOutlet="label"></ng-container>
+    <div class="main-controls">
+      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
     </div>
     <app-date-picker-mockup [placeholder]="placeholder"></app-date-picker-mockup>
   </ng-container>
 
   <ng-container *ngSwitchCase="'checkbox'">
-    <div class="label">
+    <div class="main-controls">
       <app-checkbox-mockup></app-checkbox-mockup>
-      <ng-container *ngTemplateOutlet="label"></ng-container>
+      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
     </div>
   </ng-container>
 
 </div>
 
 
-<ng-template #label>
+<ng-template #mainControlsTmp>
   <app-editable-label [parentFormControl]="labelFormControl"
                       [options]="{fontSize: '13.5px', height: '20px'}">
   </app-editable-label>

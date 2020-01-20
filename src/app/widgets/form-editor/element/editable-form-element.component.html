@@ -1,45 +1,54 @@
 <div [ngSwitch]="typeFormControl.value">
 
   <ng-container *ngSwitchCase="'input'">
-    <ng-container *ngTemplateOutlet="label"></ng-container>
+    <div class="label">
+      <ng-container *ngTemplateOutlet="label"></ng-container>
+    </div>
     <app-input-mockup [placeholder]="placeholder"></app-input-mockup>
   </ng-container>
 
   <ng-container *ngSwitchCase="'date-picker'">
-    <ng-container *ngTemplateOutlet="label"></ng-container>
+    <div class="label">
+      <ng-container *ngTemplateOutlet="label"></ng-container>
+    </div>
     <app-date-picker-mockup [placeholder]="placeholder"></app-date-picker-mockup>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'checkbox'">
+    <div class="label">
+      <app-checkbox-mockup></app-checkbox-mockup>
+      <ng-container *ngTemplateOutlet="label"></ng-container>
+    </div>
   </ng-container>
 
 </div>
 
 
 <ng-template #label>
-  <div class="label">
-    <app-editable-label [parentFormControl]="labelFormControl"
-                        [options]="{fontSize: '13.5px', height: '20px'}">
-    </app-editable-label>
+  <app-editable-label [parentFormControl]="labelFormControl"
+                      [options]="{fontSize: '13.5px', height: '20px'}">
+  </app-editable-label>
 
-    <button nz-button class="small-icon-btn"
-            [nz-tooltip]="required ? 'Mark as optional' : 'Mark as required'"
-            (click)="updateRequired()">
-      <i nz-icon
-         nzType="exclamation-circle"
-         [style.color]="required ? 'red' : ''">
-      </i>
-    </button>
+  <button nz-button class="small-icon-btn"
+          [nz-tooltip]="required ? 'Mark as optional' : 'Mark as required'"
+          (click)="updateRequired()">
+    <i nz-icon
+       nzType="exclamation-circle"
+       [style.color]="required ? 'red' : ''">
+    </i>
+  </button>
 
-    <button nz-button class="small-icon-btn"
-            nz-tooltip="Delete"
-            (click)="deleteElement.emit()">
-      <i nz-icon
-         nzType="delete"
-         nzTheme="twotone"
-         nzTwotoneColor="red">
-      </i>
-    </button>
+  <button nz-button class="small-icon-btn"
+          nz-tooltip="Delete"
+          (click)="deleteElement.emit()">
+    <i nz-icon
+       nzType="delete"
+       nzTheme="twotone"
+       nzTwotoneColor="red">
+    </i>
+  </button>
 
   <app-element-type-select class="element-type-select"
                            [type]="typeFormControl">
   </app-element-type-select>
-  </div>
 </ng-template>

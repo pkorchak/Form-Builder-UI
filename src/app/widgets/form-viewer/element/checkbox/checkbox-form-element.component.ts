@@ -6,8 +6,7 @@ import { CheckboxFormElement } from '@model/form-elements/checkbox-form-element'
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<label nz-checkbox
                     style="margin-bottom: 6px; font-size: 13.5px"
-                    [formControl]="element.formControl">
-    {{element.label}}
+                    [formControl]="element.formControl">{{element.label}}
   </label>`
 })
 export class CheckboxFormElementComponent {

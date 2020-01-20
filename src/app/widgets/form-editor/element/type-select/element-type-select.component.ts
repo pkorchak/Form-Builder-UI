@@ -20,6 +20,10 @@ export class ElementTypeSelectComponent {
     {
       value: FormElementType.DATE_PICKER,
       label: 'Date'
+    },
+    {
+      value: FormElementType.CHECKBOX,
+      label: 'Checkbox'
     }
   ];
 }

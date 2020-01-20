@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -12,8 +12,14 @@ export class EditableLabelComponent {
   @Input() parentFormControl: FormControl;
   @Input() options: EditableLabelOptions = {};
 
+  @ViewChild('input', {static: true}) input: ElementRef;
+
   selectInputContent($event) {
     $event.target.select();
+  }
+
+  public focusOnInput() {
+    this.input.nativeElement.focus();
   }
 
 }

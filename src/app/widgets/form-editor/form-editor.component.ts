@@ -1,7 +1,19 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
 import { FormStructure } from '@model/form-structure';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormElementType } from '@model/form-element-type';
+import { EditableFormElementComponent } from '@widgets/form-editor/element/editable-form-element.component';
 
 @Component({
   selector: 'app-form-editor',
@@ -19,12 +31,15 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   @Output() showFormPreviewClick = new EventEmitter();
 
+  @ViewChildren(EditableFormElementComponent) elements: QueryList<EditableFormElementComponent>;
+
   form: FormGroup;
   formElements = new FormArray([]);
   formName: FormControl;
   columnWidth: string;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -56,6 +71,9 @@ export class FormEditorComponent implements OnInit, OnChanges {
       type: FormElementType.INPUT,
       required: false
     }));
+
+    this.cdr.detectChanges();
+    this.elements.last.focusOnLabel();
   }
 
   deleteElement(index: number) {

@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { EditableLabelComponent } from '@widgets/form-editor/label/editable-label.component';
 
 @Component({
   selector: 'app-editable-form-element',
@@ -12,6 +13,8 @@ export class EditableFormElementComponent implements OnChanges {
   @Input() element: FormGroup;
 
   @Output() deleteElement = new EventEmitter();
+
+  @ViewChild(EditableLabelComponent, {static: false}) editableLabel: EditableLabelComponent;
 
   placeholder: string;
   required: boolean;
@@ -30,5 +33,9 @@ export class EditableFormElementComponent implements OnChanges {
   updateRequired() {
     this.required = !this.required;
     this.element.patchValue({required: this.required});
+  }
+
+  public focusOnLabel() {
+    this.editableLabel.focusOnInput();
   }
 }

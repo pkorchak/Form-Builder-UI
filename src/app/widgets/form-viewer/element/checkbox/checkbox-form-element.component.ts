@@ -7,6 +7,7 @@ import { CheckboxFormElement } from '@model/form-elements/checkbox-form-element'
   template: `<label nz-checkbox
                     style="margin-bottom: 6px; font-size: 13.5px"
                     [formControl]="element.formControl">{{element.label}}
+    <span *ngIf="element.required" style="color: red">*</span>
   </label>`
 })
 export class CheckboxFormElementComponent {

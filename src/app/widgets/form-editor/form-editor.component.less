@@ -1,12 +1,32 @@
-.add-element-btn {
-  font-size: 28px;
-  line-height: 28px;
-  border: 2px solid white;
+.main-controls {
+  display: flex;
 
-  &:focus {
-    font-size: 32px;
-    line-height: 32px;
-    border-width: 0;
-    transition: .2s;
+  .btn {
+    font-size: 26px;
+    line-height: 30px;
+    border: 2px solid white;
+    margin-left: 6px;
+
+    &:focus {
+      font-size: 32px;
+      line-height: 32px;
+      border-width: 0;
+      transition: .2s;
+    }
+
+    &.settings {
+      &:hover, &:focus {
+        animation: spin infinite 2s;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

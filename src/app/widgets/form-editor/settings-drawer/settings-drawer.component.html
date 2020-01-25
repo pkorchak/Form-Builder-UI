@@ -1,6 +1,5 @@
 <div class="drawer-panel"
      [ngClass]="visible ? 'opened' : 'closed'">
-
   <button nz-button class="settings-btn"
           nz-tooltip="Form settings"
           nzTooltipPlacement="bottomRight"
@@ -11,4 +10,9 @@
        nzTwotoneColor="#666699">
     </i>
   </button>
+
+  <div *ngIf="visible" class="drawer-content">
+    <div class="header">Form settings</div>
+    <ng-content></ng-content>
+  </div>
 </div>

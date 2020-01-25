@@ -22,12 +22,23 @@
     right: -@drawer-width;
   }
 
+  .drawer-content {
+    padding: 25px;
+
+    .header {
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 2px solid @grey;
+      margin-bottom: 25px;
+    }
+  }
+
   .settings-btn {
-    position: relative;
+    position: absolute;
     z-index: 2;
     background-image: linear-gradient(to right, tint(@blueviolet, 90%), @white);
     top: 100px;
-    right: 50px;
+    left: -50px;
     width: 50px;
     height: 50px;
     line-height: 50px;

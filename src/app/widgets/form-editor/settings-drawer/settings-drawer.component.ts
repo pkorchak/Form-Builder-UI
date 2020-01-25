@@ -1,10 +1,11 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener } from '@angular/core';
 import { ESCAPE } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-settings-drawer',
   templateUrl: './settings-drawer.component.html',
-  styleUrls: ['./settings-drawer.component.less']
+  styleUrls: ['./settings-drawer.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsDrawerComponent {
 

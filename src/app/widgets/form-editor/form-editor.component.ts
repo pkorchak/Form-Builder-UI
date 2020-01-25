@@ -36,6 +36,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
   form: FormGroup;
   formElements = new FormArray([]);
   formName: FormControl;
+  columnsNum: FormControl;
   columnWidth: string;
 
   constructor(private fb: FormBuilder,
@@ -51,6 +52,10 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
     this.formName = this.form.get('name') as FormControl;
 
+    this.columnsNum = this.form.get('columnsNum') as FormControl;
+    this.columnsNum.valueChanges
+      .subscribe(val => this.updateColumnWidth(val));
+
     this.formStructure.elements.forEach(element => {
       element.initFormControl();
       this.formElements.push(this.fb.group({
@@ -62,7 +67,11 @@ export class FormEditorComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.columnWidth = 100 / this.formStructure.columnsNum + '%';
+    this.updateColumnWidth(this.formStructure.columnsNum);
+  }
+
+  private updateColumnWidth(newValue: number) {
+    this.columnWidth = 100 / newValue + '%';
   }
 
   addElement() {

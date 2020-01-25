@@ -38,4 +38,7 @@
   </button>
 </app-form-container>
 
-<app-settings-drawer></app-settings-drawer>
+<app-settings-drawer>
+  <div class="option-label">Number of columns</div>
+  <nz-input-number [formControl]="columnsNum" [nzMin]="1" [nzMax]="5"></nz-input-number>
+</app-settings-drawer>

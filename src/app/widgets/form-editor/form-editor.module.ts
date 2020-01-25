@@ -7,6 +7,7 @@ import {
   NzDatePickerModule,
   NzIconModule,
   NzInputModule,
+  NzInputNumberModule,
   NzSelectModule,
   NzToolTipModule
 } from 'ng-zorro-antd';
@@ -26,6 +27,7 @@ const ANT_DESIGN_MODULES = [
   NzDatePickerModule,
   NzIconModule,
   NzInputModule,
+  NzInputNumberModule,
   NzSelectModule,
   NzToolTipModule
 ];

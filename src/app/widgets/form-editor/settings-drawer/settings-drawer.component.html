@@ -1,0 +1,14 @@
+<div class="drawer-panel"
+     [ngClass]="visible ? 'opened' : 'closed'">
+
+  <button nz-button class="settings-btn"
+          nz-tooltip="Form settings"
+          nzTooltipPlacement="bottomRight"
+          (click)="visible = !visible">
+    <i nz-icon
+       nzType="setting"
+       nzTheme="twotone"
+       nzTwotoneColor="#666699">
+    </i>
+  </button>
+</div>

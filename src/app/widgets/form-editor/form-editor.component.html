@@ -1,21 +1,9 @@
-<ng-container [formGroup]="form">
+<app-form-container [formGroup]="form">
   <div class="main-controls">
     <app-editable-label [parentFormControl]="formName"
                         [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
                         style="margin-bottom: 25px">
     </app-editable-label>
-
-    <button nz-button class="btn settings"
-            nzShape="circle"
-            nz-tooltip="Open settings"
-            nzTooltipPlacement="bottomRight"
-            (click)="openSettings()">
-      <i nz-icon
-         nzType="setting"
-         nzTheme="twotone"
-         nzTwotoneColor="#666699">
-      </i>
-    </button>
 
     <button nz-button class="btn"
             nzShape="circle"
@@ -48,5 +36,6 @@
           (click)="showFormPreviewClick.emit(form.value)">
     <i nz-icon nzType="eye"></i> Show form preview
   </button>
-</ng-container>
+</app-form-container>
 
+<app-settings-drawer></app-settings-drawer>

@@ -7,6 +7,7 @@ import { NzButtonModule, NzCheckboxModule, NzDatePickerModule, NzInputModule } f
 import { InputFormElementComponent } from './element/input/input-form-element.component';
 import { DatePickerFormElementComponent } from './element/date-picker/date-picker-form-element.component';
 import { CheckboxFormElementComponent } from './element/checkbox/checkbox-form-element.component';
+import { FormContainerModule } from '@widgets/form-container/form-container.module';
 
 const ANT_DESIGN_MODULES = [
   NzInputModule,
@@ -19,7 +20,8 @@ const ANT_DESIGN_MODULES = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ANT_DESIGN_MODULES
+    ANT_DESIGN_MODULES,
+    FormContainerModule
   ],
   declarations: [
     FormViewerComponent,

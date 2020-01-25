@@ -4,7 +4,6 @@ import { CreateFormComponent } from './create-form.component';
 import { FormEditorModule } from '@widgets/form-editor/form-editor.module';
 import { CreateFormRoutingModule } from './create-form-routing.module';
 import { FormViewerModule } from '@widgets/form-viewer';
-import { FormContainerModule } from '@widgets/form-container/form-container.module';
 import { NzButtonModule, NzIconModule } from 'ng-zorro-antd';
 
 const ANT_DESIGN_MODULES = [NzButtonModule, NzIconModule];
@@ -15,7 +14,6 @@ const ANT_DESIGN_MODULES = [NzButtonModule, NzIconModule];
     FormEditorModule,
     CreateFormRoutingModule,
     FormViewerModule,
-    FormContainerModule,
     ANT_DESIGN_MODULES
   ],
   declarations: [

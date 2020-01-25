@@ -6,9 +6,7 @@ import registerFormStructure from './register-form-structure.json';
 @Component({
   selector: 'app-register-form-view',
   template: `
-    <app-form-container>
-      <app-form-viewer [formStructure]="formStructure"></app-form-viewer>
-    </app-form-container>`
+    <app-form-viewer [formStructure]="formStructure"></app-form-viewer>`
 })
 export class RegisterFormViewComponent {
 

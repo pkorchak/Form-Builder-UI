@@ -1,5 +1,6 @@
-<ng-container [formGroup]="formGroup">
+<app-form-container [formGroup]="formGroup">
   <div class="form-name">{{formStructure?.name}}</div>
+
   <div class="controls-container">
     <div *ngFor="let element of formStructure?.elements"
          class="control-container"
@@ -8,6 +9,9 @@
       </app-form-element>
     </div>
   </div>
+
+  <ng-content select="[additionalActionBtn]"></ng-content>
+
   <button nz-button
           class="final-action-btn"
           nzType="primary"
@@ -16,4 +20,4 @@
           (click)="logForm()">
     Submit
   </button>
-</ng-container>
+</app-form-container>

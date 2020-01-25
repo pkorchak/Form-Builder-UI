@@ -17,6 +17,8 @@ import { InputMockupComponent } from '@widgets/form-editor/element/mockups/input
 import { DatePickerMockupComponent } from '@widgets/form-editor/element/mockups/date-picker-mockup.component';
 import { ElementTypeSelectComponent } from './element/type-select/element-type-select.component';
 import { CheckboxMockupComponent } from '@widgets/form-editor/element/mockups/checkbox-mockup.component';
+import { SettingsDrawerComponent } from './settings-drawer/settings-drawer.component';
+import { FormContainerModule } from '@widgets/form-container/form-container.module';
 
 const ANT_DESIGN_MODULES = [
   NzButtonModule,
@@ -32,7 +34,8 @@ const ANT_DESIGN_MODULES = [
   imports: [
     CommonModule,
     ANT_DESIGN_MODULES,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormContainerModule
   ],
   declarations: [
     FormEditorComponent,
@@ -41,7 +44,8 @@ const ANT_DESIGN_MODULES = [
     InputMockupComponent,
     CheckboxMockupComponent,
     DatePickerMockupComponent,
-    ElementTypeSelectComponent
+    ElementTypeSelectComponent,
+    SettingsDrawerComponent
   ],
   exports: [FormEditorComponent]
 })

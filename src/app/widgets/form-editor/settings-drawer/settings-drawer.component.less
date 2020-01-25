@@ -1,0 +1,53 @@
+@import '../../../styles/global/_colors.less';
+
+@shadow: -2px 0 6px rgba(0, 21, 41, 0.2);
+@drawer-width: 256px;
+
+.drawer-panel {
+  position: absolute;
+  z-index: 1;
+  background-color: @white;
+  height: 100%;
+  width: @drawer-width;
+  top: 0;
+  bottom: 0;
+  transition: right .2s;
+
+  &.opened {
+    right: 0;
+    box-shadow: @shadow;
+  }
+
+  &.closed {
+    right: -@drawer-width;
+  }
+
+  .settings-btn {
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(to right, tint(@blueviolet, 90%), @white);
+    top: 100px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+    box-shadow: @shadow;
+
+    &:focus, &:hover {
+      border-color: @light-grey-3;
+    }
+
+    i {
+      height: 30px;
+      transition: transform 2s;
+    }
+
+    &:hover i {
+      transform: rotate(-360deg);
+    }
+  }
+}

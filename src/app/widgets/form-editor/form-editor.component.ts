@@ -76,9 +76,6 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.elements.last.focusOnLabel();
   }
 
-  openSettings() {
-  }
-
   deleteElement(index: number) {
     this.formElements.removeAt(index);
   }

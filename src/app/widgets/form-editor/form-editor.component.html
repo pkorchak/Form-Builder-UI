@@ -1,22 +1,8 @@
 <app-form-container [formGroup]="form">
-  <div class="main-controls">
-    <app-editable-label [parentFormControl]="formName"
-                        [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
-                        style="margin-bottom: 25px">
-    </app-editable-label>
-
-    <button nz-button class="btn"
-            nzShape="circle"
-            nz-tooltip="Add new element"
-            nzTooltipPlacement="bottomRight"
-            (click)="addElement()">
-      <i nz-icon
-         nzType="plus-circle"
-         nzTheme="twotone"
-         nzTwotoneColor="#00cc66">
-      </i>
-    </button>
-  </div>
+  <app-editable-label [parentFormControl]="formName"
+                      [options]="{fontSize: '21px', color: '#000', borderBottomColor: '#e8e8e8'}"
+                      style="margin-bottom: 25px">
+  </app-editable-label>
 
   <div class="controls-container">
     <div *ngFor="let element of formElements.controls, let index = index"
@@ -25,6 +11,20 @@
       <app-editable-form-element [element]="element"
                                  (deleteElement)="deleteElement(index)">
       </app-editable-form-element>
+    </div>
+
+    <div class="control-container small">
+      <button nz-button class="add-element-btn"
+              nzShape="circle"
+              nz-tooltip="Add new element"
+              nzTooltipPlacement="right"
+              (click)="addElement()">
+        <i nz-icon
+           nzType="plus-circle"
+           nzTheme="twotone"
+           nzTwotoneColor="#00cc66">
+        </i>
+      </button>
     </div>
   </div>
 

@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input-mockup',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<input nz-input
-                    disabled="true"
-                    [placeholder]="placeholder || ''">`
+  styleUrls: ['input-mockup.component.less'],
+  template: `<input nz-input [formControl]="placeholderFormControl">`
 })
 export class InputMockupComponent {
 
-  @Input() placeholder: string;
+  @Input() placeholderFormControl: FormControl;
 
 }

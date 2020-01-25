@@ -61,7 +61,8 @@ export class FormEditorComponent implements OnInit, OnChanges {
       this.formElements.push(this.fb.group({
         label: [element.label, [Validators.required]],
         type: element.type,
-        required: element.required
+        required: element.required,
+        placeholder: element.placeholder
       }));
     });
   }
@@ -78,7 +79,8 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.formElements.push(this.fb.group({
       label: ['New Field', [Validators.required]],
       type: FormElementType.INPUT,
-      required: false
+      required: false,
+      placeholder: ''
     }));
 
     this.cdr.detectChanges();

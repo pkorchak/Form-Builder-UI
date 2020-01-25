@@ -1,24 +1,17 @@
 <div [ngSwitch]="typeFormControl.value">
 
-  <ng-container *ngSwitchCase="'input'">
-    <div class="main-controls">
-      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
-    </div>
-    <app-input-mockup [placeholder]="placeholder"></app-input-mockup>
-  </ng-container>
-
-  <ng-container *ngSwitchCase="'date-picker'">
-    <div class="main-controls">
-      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
-    </div>
-    <app-date-picker-mockup [placeholder]="placeholder"></app-date-picker-mockup>
-  </ng-container>
-
   <ng-container *ngSwitchCase="'checkbox'">
     <div class="main-controls">
       <app-checkbox-mockup></app-checkbox-mockup>
       <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
     </div>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <div class="main-controls">
+      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
+    </div>
+    <app-input-mockup [placeholderFormControl]="placeholderFormControl"></app-input-mockup>
   </ng-container>
 
 </div>

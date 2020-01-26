@@ -4,8 +4,7 @@
   "elements": [
     {
       "label": "Email",
-      "type": "input",
-      "inputType": "email",
+      "type": "email",
       "required": true,
       "placeholder": "Enter email"
     },
@@ -16,26 +15,24 @@
     },
     {
       "label": "First Name",
-      "type": "input",
+      "type": "short-text",
       "required": true,
       "placeholder": "Enter first name"
     },
     {
       "label": "Last Name",
-      "type": "input",
+      "type": "short-text",
       "placeholder": "Enter last name"
     },
     {
       "label": "Password",
-      "type": "input",
-      "inputType": "password",
+      "type": "password",
       "required": true,
       "placeholder": "Enter password"
     },
     {
       "label": "Repeat Password",
-      "type": "input",
-      "inputType": "password",
+      "type": "password",
       "required": true,
       "placeholder": "Repeat password"
     },

@@ -5,7 +5,7 @@ import { InputFormElement } from '@model/form-elements/input-form-element';
   selector: 'app-input-form-element',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<input nz-input
-                    [type]="element.inputType"
+                    [type]="element.type"
                     [formControl]="element.formControl"
                     [placeholder]="element.placeholder || ''">`
 })

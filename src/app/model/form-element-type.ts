@@ -1,5 +1,7 @@
 export enum FormElementType {
-  INPUT = 'input',
+  SHORT_TEXT = 'short-text',
   CHECKBOX = 'checkbox',
-  DATE = 'date'
+  DATE = 'date',
+  EMAIL = 'email',
+  PASSWORD = 'password'
 }

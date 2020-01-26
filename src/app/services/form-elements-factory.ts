@@ -19,7 +19,9 @@ export class FormElementsFactory {
       case FormElementType.CHECKBOX:
         elementInstance = map(element, new CheckboxFormElement());
         break;
-      case FormElementType.INPUT:
+      case FormElementType.SHORT_TEXT:
+      case FormElementType.EMAIL:
+      case FormElementType.PASSWORD:
         elementInstance = map(element, new InputFormElement());
         break;
       case FormElementType.DATE:

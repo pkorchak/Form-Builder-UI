@@ -19,7 +19,7 @@ export class CreateFormComponent {
     elements: [
       this.formElementsFactory.createInstance({
         label: 'New Field',
-        type: FormElementType.INPUT
+        type: FormElementType.SHORT_TEXT
       })
     ]
   };

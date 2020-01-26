@@ -1,8 +1,7 @@
 <div [ngSwitch]="element.type">
 
-  <ng-container *ngSwitchCase="'input'">
-    <ng-container *ngTemplateOutlet="label"></ng-container>
-    <app-input-form-element [element]="element"></app-input-form-element>
+  <ng-container *ngSwitchCase="'checkbox'">
+    <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
   </ng-container>
 
   <ng-container *ngSwitchCase="'date'">
@@ -10,8 +9,9 @@
     <app-date-form-element [element]="element"></app-date-form-element>
   </ng-container>
 
-  <ng-container *ngSwitchCase="'checkbox'">
-    <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
+  <ng-container *ngSwitchDefault>
+    <ng-container *ngTemplateOutlet="label"></ng-container>
+    <app-input-form-element [element]="element"></app-input-form-element>
   </ng-container>
 
 </div>

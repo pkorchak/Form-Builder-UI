@@ -14,8 +14,8 @@ export class ElementTypeSelectComponent {
 
   options = [
     {
-      value: FormElementType.INPUT,
-      label: 'Input'
+      value: FormElementType.SHORT_TEXT,
+      label: 'Short text'
     },
     {
       value: FormElementType.DATE,
@@ -24,6 +24,14 @@ export class ElementTypeSelectComponent {
     {
       value: FormElementType.CHECKBOX,
       label: 'Checkbox'
+    },
+    {
+      value: FormElementType.EMAIL,
+      label: 'Email'
+    },
+    {
+      value: FormElementType.PASSWORD,
+      label: 'Password'
     }
   ];
 }

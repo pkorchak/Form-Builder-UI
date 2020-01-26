@@ -1,29 +1,21 @@
 import { AbstractFormElement } from './abstract-form-element';
 import { FormControl, ValidatorFn, Validators } from '@angular/forms';
+import { FormElementType } from '@model/form-element-type';
 
 export class InputFormElement extends AbstractFormElement {
-
-  /**
-   * Type of the input. Valid values are 'text', 'email', 'number' and 'password'
-   */
-  inputType: InputType = InputType.TEXT;
 
   initFormControl(): void {
     const validators: ValidatorFn[] = [];
     if (this.required) {
       validators.push(Validators.required);
     }
-    if (this.inputType === InputType.EMAIL) {
+    if (this.type === FormElementType.EMAIL) {
       validators.push(Validators.email);
+    }
+    if (this.type === FormElementType.PASSWORD) {
+      validators.push(Validators.minLength(6));
     }
 
     this.formControl = new FormControl(null, validators);
   }
-}
-
-export enum InputType {
-  TEXT = 'text',
-  EMAIL = 'email',
-  NUMBER = 'number',
-  PASSWORD = 'password'
 }

@@ -78,7 +78,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
   addElement() {
     this.formElements.push(this.fb.group({
       label: ['New Field', [Validators.required]],
-      type: FormElementType.INPUT,
+      type: FormElementType.SHORT_TEXT,
       required: false,
       placeholder: ''
     }));

@@ -3,7 +3,7 @@ import { AbstractFormElement } from '@model/form-elements/abstract-form-element'
 import { FormElementType } from '@model/form-element-type';
 import { CheckboxFormElement } from '@model/form-elements/checkbox-form-element';
 import { InputFormElement } from '@model/form-elements/input-form-element';
-import { DatePickerFormElement } from '@model/form-elements/date-picker-form-element';
+import { DateFormElement } from '@model/form-elements/date-form-element';
 
 const map = (object: any, elementInstance: AbstractFormElement) =>
   Object.assign(elementInstance, ...Object.keys(object)
@@ -22,8 +22,8 @@ export class FormElementsFactory {
       case FormElementType.INPUT:
         elementInstance = map(element, new InputFormElement());
         break;
-      case FormElementType.DATE_PICKER:
-        elementInstance = map(element, new DatePickerFormElement());
+      case FormElementType.DATE:
+        elementInstance = map(element, new DateFormElement());
         break;
       default:
         throw new TypeError(`Unknown type "${element.type}". Valid values are ${Object.keys(FormElementType)

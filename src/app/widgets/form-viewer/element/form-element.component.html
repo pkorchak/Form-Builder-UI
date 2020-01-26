@@ -5,9 +5,9 @@
     <app-input-form-element [element]="element"></app-input-form-element>
   </ng-container>
 
-  <ng-container *ngSwitchCase="'date-picker'">
+  <ng-container *ngSwitchCase="'date'">
     <ng-container *ngTemplateOutlet="label"></ng-container>
-    <app-date-picker-form-element [element]="element"></app-date-picker-form-element>
+    <app-date-form-element [element]="element"></app-date-form-element>
   </ng-container>
 
   <ng-container *ngSwitchCase="'checkbox'">

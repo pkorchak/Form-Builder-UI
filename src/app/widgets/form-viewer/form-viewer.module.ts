@@ -5,7 +5,7 @@ import { FormElementComponent } from './element/form-element.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule, NzCheckboxModule, NzDatePickerModule, NzInputModule } from 'ng-zorro-antd';
 import { InputFormElementComponent } from './element/input/input-form-element.component';
-import { DatePickerFormElementComponent } from './element/date-picker/date-picker-form-element.component';
+import { DateFormElementComponent } from './element/date/date-form-element.component';
 import { CheckboxFormElementComponent } from './element/checkbox/checkbox-form-element.component';
 import { FormContainerModule } from '@widgets/form-container/form-container.module';
 
@@ -28,7 +28,7 @@ const ANT_DESIGN_MODULES = [
     FormElementComponent,
     InputFormElementComponent,
     CheckboxFormElementComponent,
-    DatePickerFormElementComponent
+    DateFormElementComponent
   ],
   exports: [FormViewerComponent]
 })

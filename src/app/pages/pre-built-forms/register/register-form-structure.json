@@ -11,7 +11,7 @@
     },
     {
       "label": "Birth Date",
-      "type": "date-picker",
+      "type": "date",
       "placeholder": "Select birth date"
     },
     {

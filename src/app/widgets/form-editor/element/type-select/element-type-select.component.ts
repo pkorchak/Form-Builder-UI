@@ -18,7 +18,7 @@ export class ElementTypeSelectComponent {
       label: 'Input'
     },
     {
-      value: FormElementType.DATE_PICKER,
+      value: FormElementType.DATE,
       label: 'Date'
     },
     {

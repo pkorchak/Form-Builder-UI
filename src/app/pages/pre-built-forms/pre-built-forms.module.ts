@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PreBuiltFormsRoutingModule } from './pre-built-forms-routing.module';
-import { RegisterFormViewComponent } from './register/register-form-view.component';
+import { RegisterFormComponent } from './register/register-form.component';
 import { FormViewerModule } from '@widgets/form-viewer';
+import { PreBuiltFormComponent } from './pre-built-form.component';
+import { FormEditorModule } from '@widgets/form-editor/form-editor.module';
+import { NzButtonModule, NzIconModule } from 'ng-zorro-antd';
 
+const ANT_DESIGN_MODULES = [NzButtonModule, NzIconModule];
 
 @NgModule({
   imports: [
     CommonModule,
     PreBuiltFormsRoutingModule,
-    FormViewerModule
+    FormViewerModule,
+    FormEditorModule,
+    ANT_DESIGN_MODULES
   ],
-  declarations: [RegisterFormViewComponent]
+  declarations: [
+    PreBuiltFormComponent,
+    RegisterFormComponent
+  ]
 })
 export class PreBuiltFormsModule {
 }

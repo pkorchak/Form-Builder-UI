@@ -1,0 +1,16 @@
+<ng-container *ngIf="isInEditor then editorTmp else viewerTmp"></ng-container>
+<ng-template #editorTmp>
+  <app-form-editor [formStructure]="formStructure"
+                   (showFormPreviewClick)="onShowFormPreviewClick($event)">
+  </app-form-editor>
+</ng-template>
+<ng-template #viewerTmp>
+  <app-form-viewer [formStructure]="formStructure">
+    <button additionalActionBtn nz-button
+            class="final-action-btn"
+            nzShape="round"
+            (click)="isInEditor = true">
+      <i nz-icon nzType="edit"></i> Open in editor
+    </button>
+  </app-form-viewer>
+</ng-template>

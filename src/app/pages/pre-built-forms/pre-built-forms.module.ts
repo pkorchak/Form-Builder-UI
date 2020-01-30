@@ -6,6 +6,7 @@ import { FormViewerModule } from '@widgets/form-viewer';
 import { PreBuiltFormComponent } from './pre-built-form.component';
 import { FormEditorModule } from '@widgets/form-editor/form-editor.module';
 import { NzButtonModule, NzIconModule } from 'ng-zorro-antd';
+import { ShippingFormComponent } from './shipping/shipping-form.component';
 
 const ANT_DESIGN_MODULES = [NzButtonModule, NzIconModule];
 
@@ -19,7 +20,8 @@ const ANT_DESIGN_MODULES = [NzButtonModule, NzIconModule];
   ],
   declarations: [
     PreBuiltFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ShippingFormComponent
   ]
 })
 export class PreBuiltFormsModule {

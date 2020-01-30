@@ -1,0 +1,33 @@
+{
+  "columnsNum": 2,
+  "name": "Shipping Information",
+  "elements": [
+    {
+      "label": "First Name",
+      "type": "short-text",
+      "required": true,
+      "placeholder": "Enter first name"
+    },
+    {
+      "label": "Last Name",
+      "type": "short-text",
+      "required": true,
+      "placeholder": "Enter last name"
+    },
+    {
+      "label": "Address Line 1",
+      "type": "short-text",
+      "required": true
+    },
+    {
+      "label": "Address Line 2",
+      "type": "short-text"
+    },
+    {
+      "label": "Email Address",
+      "type": "email",
+      "required": true,
+      "placeholder": "Enter email"
+    }
+  ]
+}

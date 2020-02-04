@@ -18,6 +18,10 @@ export class ElementTypeSelectComponent {
       label: 'Short text'
     },
     {
+      value: FormElementType.LONG_TEXT,
+      label: 'Long text'
+    },
+    {
       value: FormElementType.DATE,
       label: 'Date'
     },

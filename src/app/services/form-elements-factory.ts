@@ -4,6 +4,7 @@ import { FormElementType } from '@model/form-element-type';
 import { CheckboxFormElement } from '@model/form-elements/checkbox-form-element';
 import { InputFormElement } from '@model/form-elements/input-form-element';
 import { DateFormElement } from '@model/form-elements/date-form-element';
+import { TextareaFormElement } from '@model/form-elements/textarea-form-element';
 
 const map = (object: any, elementInstance: AbstractFormElement) =>
   Object.assign(elementInstance, ...Object.keys(object)
@@ -18,6 +19,9 @@ export class FormElementsFactory {
     switch (element.type) {
       case FormElementType.CHECKBOX:
         elementInstance = map(element, new CheckboxFormElement());
+        break;
+      case FormElementType.LONG_TEXT:
+        elementInstance = map(element, new TextareaFormElement());
         break;
       case FormElementType.SHORT_TEXT:
       case FormElementType.EMAIL:

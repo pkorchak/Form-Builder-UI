@@ -44,6 +44,10 @@
       "type": "email",
       "required": true,
       "placeholder": "Enter email"
+    },
+    {
+      "label": "Additional Information (optional)",
+      "type": "long-text"
     }
   ]
 }

@@ -7,6 +7,13 @@
     </div>
   </ng-container>
 
+  <ng-container *ngSwitchCase="'long-text'">
+    <div class="main-controls">
+      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
+    </div>
+    <app-textarea-mockup [placeholderFormControl]="placeholderFormControl"></app-textarea-mockup>
+  </ng-container>
+
   <ng-container *ngSwitchDefault>
     <div class="main-controls">
       <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>

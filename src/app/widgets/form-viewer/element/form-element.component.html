@@ -4,6 +4,11 @@
     <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
   </ng-container>
 
+  <ng-container *ngSwitchCase="'long-text'">
+    <ng-container *ngTemplateOutlet="label"></ng-container>
+    <app-textarea-form-element [element]="element"></app-textarea-form-element>
+  </ng-container>
+
   <ng-container *ngSwitchCase="'date'">
     <ng-container *ngTemplateOutlet="label"></ng-container>
     <app-date-form-element [element]="element"></app-date-form-element>

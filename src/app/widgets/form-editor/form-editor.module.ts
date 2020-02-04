@@ -19,6 +19,7 @@ import { ElementTypeSelectComponent } from './element/type-select/element-type-s
 import { CheckboxMockupComponent } from '@widgets/form-editor/element/mockups/checkbox/checkbox-mockup.component';
 import { SettingsDrawerComponent } from './settings-drawer/settings-drawer.component';
 import { FormContainerModule } from '@widgets/form-container/form-container.module';
+import { TextareaMockupComponent } from '@widgets/form-editor/element/mockups/textarea/textarea-mockup.component';
 
 const ANT_DESIGN_MODULES = [
   NzButtonModule,
@@ -44,6 +45,7 @@ const ANT_DESIGN_MODULES = [
     EditableFormElementComponent,
     InputMockupComponent,
     CheckboxMockupComponent,
+    TextareaMockupComponent,
     ElementTypeSelectComponent,
     SettingsDrawerComponent
   ],

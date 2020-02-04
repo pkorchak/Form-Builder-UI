@@ -34,6 +34,12 @@
       "required": true
     },
     {
+      "label": "Phone Number",
+      "type": "number",
+      "required": true,
+      "placeholder": "Enter phone number"
+    },
+    {
       "label": "Email Address",
       "type": "email",
       "required": true,

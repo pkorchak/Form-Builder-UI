@@ -22,6 +22,7 @@ export class FormElementsFactory {
       case FormElementType.SHORT_TEXT:
       case FormElementType.EMAIL:
       case FormElementType.PASSWORD:
+      case FormElementType.NUMBER:
         elementInstance = map(element, new InputFormElement());
         break;
       case FormElementType.DATE:

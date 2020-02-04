@@ -15,13 +15,23 @@
       "placeholder": "Enter last name"
     },
     {
-      "label": "Address Line 1",
+      "label": "City",
       "type": "short-text",
       "required": true
     },
     {
-      "label": "Address Line 2",
+      "label": "Street Address",
+      "type": "short-text",
+      "required": true
+    },
+    {
+      "label": "Apt., Suite, Unit, Etc. (optional)",
       "type": "short-text"
+    },
+    {
+      "label": "ZIP Code",
+      "type": "number",
+      "required": true
     },
     {
       "label": "Email Address",

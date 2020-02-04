@@ -3,5 +3,6 @@ export enum FormElementType {
   CHECKBOX = 'checkbox',
   DATE = 'date',
   EMAIL = 'email',
-  PASSWORD = 'password'
+  PASSWORD = 'password',
+  NUMBER = 'number'
 }

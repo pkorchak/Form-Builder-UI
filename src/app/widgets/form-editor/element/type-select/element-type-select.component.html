@@ -4,15 +4,14 @@
            nzDropdownClassName="select-type"
            [nzDropdownStyle]="{width: '120px', marginLeft: '-83px'}"
            [nzCustomTemplate]="selectTmp">
-  <ng-container *ngFor="let option of options">
-    <nz-option nzCustomContent [nzValue]="option.value">
-      <div class="option-icon-container">
-        <i nz-icon class="option-icon"
-           [nzType]="option.value">
-        </i>
-      </div>{{option.label}}
-    </nz-option>
-  </ng-container>
+  <nz-option *ngFor="let option of options"
+             nzCustomContent [nzValue]="option.value">
+    <div class="option-icon-container">
+      <i nz-icon class="option-icon"
+         [nzType]="option.value">
+      </i>
+    </div>{{option.label}}
+  </nz-option>
 </nz-select>
 
 <ng-template #selectTmp>

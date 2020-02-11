@@ -14,7 +14,7 @@ export class EditableFormElementComponent implements OnChanges {
 
   @Output() deleteElement = new EventEmitter();
 
-  @ViewChild(EditableLabelComponent, {static: false}) editableLabel: EditableLabelComponent;
+  @ViewChild(EditableLabelComponent) editableLabel: EditableLabelComponent;
 
   required: boolean;
   placeholderFormControl: FormControl;

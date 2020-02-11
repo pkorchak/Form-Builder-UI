@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-input-mockup',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['input-mockup.component.less'],
+  styleUrls: ['../editable-placeholder.less'],
   template: `<input nz-input [formControl]="placeholderFormControl">`
 })
 export class InputMockupComponent {

@@ -16,10 +16,10 @@ export class EditableFormElementComponent implements OnChanges {
 
   @ViewChild(EditableLabelComponent) editableLabel: EditableLabelComponent;
 
-  required: boolean;
   placeholderFormControl: FormControl;
   labelFormControl: FormControl;
   typeFormControl: FormControl;
+  required: boolean;
 
   ngOnChanges(): void {
     this.placeholderFormControl = this.element.get('placeholder') as FormControl;

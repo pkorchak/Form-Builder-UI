@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-for-prod": "ng build --prod",
     "test": "ng test",
+    "ci-test": "ng test --karma-config=karma-ci.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

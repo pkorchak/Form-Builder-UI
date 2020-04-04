@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "^9.1.0",
     "module-alias": "^2.2.2",
+    "ng-mocks": "^9.2.0",
     "ng-zorro-antd": "^8.5.2",
     "ngx-perfect-scrollbar": "^8.0.0",
     "rxjs": "^6.5.5",

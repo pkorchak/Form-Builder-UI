@@ -57,7 +57,6 @@ export class FormEditorComponent implements OnInit, OnChanges {
       .subscribe(val => this.updateColumnWidth(val));
 
     this.formStructure.elements.forEach(element => {
-      element.initFormControl();
       this.formElements.push(this.fb.group({
         label: [element.label, [Validators.required]],
         type: element.type,

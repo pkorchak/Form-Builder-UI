@@ -14,7 +14,7 @@ import { AbstractFormElement } from '@model/form-elements/abstract-form-element'
 describe('FormViewerComponent', () => {
   let component: FormViewerComponent;
   let fixture: ComponentFixture<FormViewerComponent>;
-  let root: DebugElement;
+  let de: DebugElement;
   let formElementsFactory: FormElementsFactory;
   let elements: AbstractFormElement[];
 
@@ -36,7 +36,7 @@ describe('FormViewerComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FormViewerComponent);
     component = fixture.componentInstance;
-    root = fixture.debugElement;
+    de = fixture.debugElement;
 
     elements = [
       formElementsFactory.createInstance({
@@ -57,13 +57,13 @@ describe('FormViewerComponent', () => {
 
   it('should show form name', () => {
     fixture.detectChanges();
-    expect(root.query(By.css('.form-name')).nativeElement.innerText).toBe('Form name');
+    expect(de.query(By.css('.form-name')).nativeElement.innerText).toBe('Form name');
   });
 
   it('should pass all elements to FormElementComponent instances', () => {
     fixture.detectChanges();
 
-    const formElements = root.queryAll(By.directive(FormElementComponent));
+    const formElements = de.queryAll(By.directive(FormElementComponent));
     expect(formElements.length).toBe(2);
     expect(formElements[0].componentInstance.element).toBe(elements[0]);
     expect(formElements[1].componentInstance.element).toBe(elements[1]);
@@ -80,7 +80,7 @@ describe('FormViewerComponent', () => {
       component.ngOnChanges();
       fixture.detectChanges();
 
-      root.queryAll(By.css('.control-container'))
+      de.queryAll(By.css('.control-container'))
         .forEach(controlContainer => expect(controlContainer.styles.width).toBe(testData.columnWidth));
     }));
 });

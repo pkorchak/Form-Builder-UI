@@ -10,13 +10,26 @@ import { EditableFormElementComponent } from '@widgets/form-editor/element/edita
 import { NzInputNumberModule } from 'ng-zorro-antd';
 import { MockComponents } from 'ng-mocks';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ChangeDetectionStrategy, DebugElement } from '@angular/core';
+import { AbstractFormElement } from '@model/form-elements/abstract-form-element';
 
 describe('FormEditorComponent', () => {
   let component: FormEditorComponent;
   let fixture: ComponentFixture<FormEditorComponent>;
-  let root: DebugElement;
+  let de: DebugElement;
   let formElementsFactory: FormElementsFactory;
+  let elements: AbstractFormElement[];
+
+  const FIRST_ELEMENT_METADATA = {
+    label: 'Input',
+    type: FormElementType.SHORT_TEXT,
+    required: true,
+    placeholder: 'Enter text'
+  };
+  const SECOND_ELEMENT_METADATA = {
+    label: 'Checkbox',
+    type: FormElementType.CHECKBOX
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,7 +44,11 @@ describe('FormEditorComponent', () => {
         ReactiveFormsModule,
         NzInputNumberModule
       ]
-    }).compileComponents();
+    })
+      .overrideComponent(FormEditorComponent, {
+        set: {changeDetection: ChangeDetectionStrategy.Default}
+      })
+      .compileComponents();
 
     formElementsFactory = TestBed.inject(FormElementsFactory);
   }));
@@ -39,20 +56,85 @@ describe('FormEditorComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FormEditorComponent);
     component = fixture.componentInstance;
-    root = fixture.debugElement;
+    de = fixture.debugElement;
+
+    elements = [
+      formElementsFactory.createInstance(FIRST_ELEMENT_METADATA),
+      formElementsFactory.createInstance(SECOND_ELEMENT_METADATA)
+    ];
 
     component.formStructure = {
       name: 'Form name',
       columnsNum: 1,
-      elements: []
+      elements
     };
+
+    component.ngOnChanges();
+    fixture.detectChanges();
   });
 
   it('should show form name', () => {
+    expect(de.queryAll(By.directive(EditableLabelComponent))[0].componentInstance.parentFormControl.value)
+      .toBe('Form name');
+  });
+
+  it('should pass all form elements to EditableFormElementComponent instances', () => {
+    const formElements = de.queryAll(By.directive(EditableFormElementComponent));
+    expect(formElements.length).toBe(2);
+    expect(formElements[0].componentInstance.element.value).toEqual(FIRST_ELEMENT_METADATA);
+    expect(formElements[1].componentInstance.element.value).toEqual({
+      ...SECOND_ELEMENT_METADATA,
+      required: null,
+      placeholder: null
+    });
+  });
+
+  it('should be able to add form elements', () => {
+    const formElementsBeforeEditing = de.queryAll(By.directive(EditableFormElementComponent));
+    expect(formElementsBeforeEditing.length).toBe(2);
+
+    de.query(By.css('.add-element-btn')).nativeElement.click();
     fixture.detectChanges();
 
-    expect(root.queryAll(By.directive(EditableLabelComponent))[0].componentInstance.parentFormControl.value)
-      .toBe('Form name');
+    const formElementsAfterEditing = de.queryAll(By.directive(EditableFormElementComponent));
+    expect(formElementsAfterEditing.length).toBe(3);
+    expect(formElementsAfterEditing[2].componentInstance.element.value).toEqual({
+      label: 'New Field',
+      type: FormElementType.SHORT_TEXT,
+      required: false,
+      placeholder: ''
+    });
+  });
+
+  it('should be able to delete form elements', () => {
+    const formElementsBeforeEditing = de.queryAll(By.directive(EditableFormElementComponent));
+    expect(formElementsBeforeEditing.length).toBe(2);
+
+    // Delete the first form element
+    formElementsBeforeEditing[0].componentInstance.deleteElement.emit();
+    fixture.detectChanges();
+
+    const formElementsAfterFirstEditing = de.queryAll(By.directive(EditableFormElementComponent));
+    expect(formElementsAfterFirstEditing.length).toBe(1);
+    expect(formElementsAfterFirstEditing[0].componentInstance.element.value).toEqual({
+      ...SECOND_ELEMENT_METADATA,
+      required: null,
+      placeholder: null
+    });
+
+    // Delete the second form element
+    formElementsBeforeEditing[1].componentInstance.deleteElement.emit();
+    fixture.detectChanges();
+
+    expect(de.queryAll(By.directive(EditableFormElementComponent)).length).toBe(0);
+  });
+
+  it('should be able to change columns number', () => {
+    verifyColumnWidthIs('100%');
+
+    component.form.get('columnsNum')?.setValue(5);
+    fixture.detectChanges();
+    verifyColumnWidthIs('20%');
   });
 
   [
@@ -62,23 +144,15 @@ describe('FormEditorComponent', () => {
     {columnsNum: 4, columnWidth: '25%'},
   ].forEach(testData =>
     it('column width should be ' + testData.columnWidth + ' for columnsNum ' + testData.columnsNum, () => {
-      component.formStructure.columnsNum = testData.columnsNum;
-      component.formStructure.elements = [
-        formElementsFactory.createInstance({
-          label: 'Input 1',
-          type: FormElementType.SHORT_TEXT
-        }),
-        formElementsFactory.createInstance({
-          label: 'Input 2',
-          type: FormElementType.SHORT_TEXT
-        })
-      ];
-      component.ngOnChanges();
+      component.form.get('columnsNum')?.setValue(testData.columnsNum);
       fixture.detectChanges();
-
-      const controlContainers = root.queryAll(By.css('.control-container'));
-      expect(controlContainers[0].styles.width).toBe(testData.columnWidth);
-      expect(controlContainers[1].styles.width).toBe(testData.columnWidth);
+      verifyColumnWidthIs(testData.columnWidth);
     }));
 
+
+  function verifyColumnWidthIs(columnWidth: string) {
+    const controlContainers = de.queryAll(By.css('.control-container'));
+    expect(controlContainers[0].styles.width).toBe(columnWidth);
+    expect(controlContainers[1].styles.width).toBe(columnWidth);
+  }
 });

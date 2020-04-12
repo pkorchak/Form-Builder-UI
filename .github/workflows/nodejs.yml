@@ -24,8 +24,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Update Chrome to be compatible with ChromeDriver for e2e tests
+        run: |
+          sudo apt-get update
+          sudo apt-get install chromium-driver google-chrome-stable
       - run: npm ci
-      - run: npm install
       - run: npm run lint
       - run: npm run build-for-prod
       - run: npm run ci-test

@@ -17,10 +17,10 @@
       <li nz-submenu nzOpen nzTitle="Pre-Built Forms" nzIcon="container" title="Pre-Built Forms">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/pre-built/register">Register</a>
+            <a [routerLink]="['/pre-built', 'register']">Register</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/pre-built/shipping">Shipping Information</a>
+            <a [routerLink]="['/pre-built', 'shipping']">Shipping Information</a>
           </li>
         </ul>
       </li>

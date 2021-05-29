@@ -1,25 +1,25 @@
 <div [ngSwitch]="typeFormControl.value">
 
-  <ng-container *ngSwitchCase="'checkbox'">
+  <ng-template ngSwitchCase="checkbox">
     <div class="main-controls">
       <app-checkbox-mockup></app-checkbox-mockup>
-      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
+      <ng-template [ngTemplateOutlet]="mainControlsTmp"></ng-template>
     </div>
-  </ng-container>
+  </ng-template>
 
-  <ng-container *ngSwitchCase="'long-text'">
+  <ng-template ngSwitchCase="long-text">
     <div class="main-controls">
-      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
+      <ng-template [ngTemplateOutlet]="mainControlsTmp"></ng-template>
     </div>
     <app-textarea-mockup [placeholderFormControl]="placeholderFormControl"></app-textarea-mockup>
-  </ng-container>
+  </ng-template>
 
-  <ng-container *ngSwitchDefault>
+  <ng-template ngSwitchDefault>
     <div class="main-controls">
-      <ng-container *ngTemplateOutlet="mainControlsTmp"></ng-container>
+      <ng-template [ngTemplateOutlet]="mainControlsTmp"></ng-template>
     </div>
     <app-input-mockup [placeholderFormControl]="placeholderFormControl"></app-input-mockup>
-  </ng-container>
+  </ng-template>
 
 </div>
 

@@ -1,23 +1,23 @@
 <div [ngSwitch]="element.type">
 
-  <ng-container *ngSwitchCase="'checkbox'">
+  <ng-template ngSwitchCase="checkbox">
     <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
-  </ng-container>
+  </ng-template>
 
-  <ng-container *ngSwitchCase="'long-text'">
-    <ng-container *ngTemplateOutlet="label"></ng-container>
+  <ng-template ngSwitchCase="long-text">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
     <app-textarea-form-element [element]="element"></app-textarea-form-element>
-  </ng-container>
+  </ng-template>
 
-  <ng-container *ngSwitchCase="'date'">
-    <ng-container *ngTemplateOutlet="label"></ng-container>
+  <ng-template ngSwitchCase="date">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
     <app-date-form-element [element]="element"></app-date-form-element>
-  </ng-container>
+  </ng-template>
 
-  <ng-container *ngSwitchDefault>
-    <ng-container *ngTemplateOutlet="label"></ng-container>
+  <ng-template ngSwitchDefault>
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
     <app-input-form-element [element]="element"></app-input-form-element>
-  </ng-container>
+  </ng-template>
 
 </div>
 

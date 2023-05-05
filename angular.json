@@ -129,5 +129,8 @@
         }
       }
     }},
-  "defaultProject": "form-builder-demo"
+  "defaultProject": "form-builder-demo",
+  "cli": {
+    "analytics": false
+  }
 }

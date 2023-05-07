@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --poll 500",
     "build": "ng build",
     "build-for-prod": "ng build --prod",
     "test": "ng test",

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormViewerComponent } from './form-viewer.component';
-import { NzButtonModule } from 'ng-zorro-antd';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MockComponents } from 'ng-mocks';
 import { FormElementComponent } from '@widgets/form-viewer/element/form-element.component';

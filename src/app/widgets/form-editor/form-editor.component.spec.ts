@@ -7,7 +7,7 @@ import { FormElementsFactory } from '@services/form-elements-factory';
 import { EditableLabelComponent } from '@widgets/form-editor/label/editable-label.component';
 import { SettingsDrawerComponent } from '@widgets/form-editor/settings-drawer/settings-drawer.component';
 import { EditableFormElementComponent } from '@widgets/form-editor/element/editable-form-element.component';
-import { NzInputNumberModule } from 'ng-zorro-antd';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { MockComponents } from 'ng-mocks';
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy, DebugElement } from '@angular/core';

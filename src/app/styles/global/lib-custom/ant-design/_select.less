@@ -1,28 +1,25 @@
 @import "../../_colors";
 
-.ant-select-dropdown-menu-item {
-  font-size: 13px;
-}
-
-.ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
-  color: @blueviolet;
-}
-
 .element-type-select {
-  .ant-select-selection--single {
-    height: 22px;
-  }
-
-  .ant-select-selection__rendered {
+  .ant-select-selection {
     margin-left: 3px;
     margin-right: 16px;
     font-size: 16px;
     line-height: 22px;
   }
 
-  .ant-select-open,
-  .ant-select-selection:focus {
-    color: @blueviolet;
+  .ant-select-selector {
+    height: 22px !important;
+    padding: 0 16px 0 3px !important;
+  }
+
+  .ant-select-selection-item {
+    padding-right: 0 !important;
+    line-height: 22px !important;
+  }
+
+  .ant-select-single.ant-select-open .ant-select-selection-item {
+    color: @blueviolet !important;
   }
 
   .ant-select-arrow {

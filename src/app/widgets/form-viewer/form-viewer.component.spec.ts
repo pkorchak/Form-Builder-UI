@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FormViewerComponent } from './form-viewer.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -18,7 +18,7 @@ describe('FormViewerComponent', () => {
   let formElementsFactory: FormElementsFactory;
   let elements: AbstractFormElement[];
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         FormViewerComponent,

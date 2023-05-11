@@ -43,7 +43,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
               private cdr: ChangeDetectorRef) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.form = this.fb.group({
       name: [this.formStructure.name, [Validators.required]],
       columnsNum: this.formStructure.columnsNum,
@@ -74,7 +74,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.columnWidth = 100 / newValue + '%';
   }
 
-  addElement() {
+  addElement(): void {
     this.formElements.push(this.fb.group({
       label: ['New Field', [Validators.required]],
       type: FormElementType.SHORT_TEXT,
@@ -86,7 +86,7 @@ export class FormEditorComponent implements OnInit, OnChanges {
     this.elements.last.focusOnLabel();
   }
 
-  deleteElement(index: number) {
+  deleteElement(index: number): void {
     this.formElements.removeAt(index);
   }
 }

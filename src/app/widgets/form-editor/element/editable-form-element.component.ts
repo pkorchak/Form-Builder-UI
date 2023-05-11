@@ -28,12 +28,12 @@ export class EditableFormElementComponent implements OnChanges {
     this.required = this.element.get('required')?.value;
   }
 
-  updateRequired() {
+  updateRequired(): void {
     this.required = !this.required;
     this.element.patchValue({required: this.required});
   }
 
-  public focusOnLabel() {
+  public focusOnLabel(): void {
     this.editableLabel.focusOnInput();
   }
 }

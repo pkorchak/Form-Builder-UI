@@ -10,7 +10,7 @@ import { FormStructureMapper } from '@services/form-structure-mapper';
 })
 export class PreBuiltFormComponent implements OnInit {
 
-  @Input() formStructureJson: any;
+  @Input() formStructureJson: FormStructure;
 
   formStructure: FormStructure;
   isInEditor = false;
@@ -18,11 +18,11 @@ export class PreBuiltFormComponent implements OnInit {
   constructor(private formStructureMapper: FormStructureMapper) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.formStructure = this.formStructureMapper.map(this.formStructureJson);
   }
 
-  onShowFormPreviewClick(newFormStructure: any) {
+  onShowFormPreviewClick(newFormStructure: FormStructure): void {
     this.formStructure = this.formStructureMapper.map(newFormStructure);
     this.isInEditor = false;
   }

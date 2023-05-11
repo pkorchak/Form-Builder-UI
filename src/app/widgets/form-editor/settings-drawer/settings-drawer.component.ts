@@ -15,14 +15,14 @@ export class SettingsDrawerComponent {
   }
 
   @HostListener('document:click', ['$event'])
-  onClick(event) {
+  onClick(event: MouseEvent): void {
     if (this.visible && !this.el.nativeElement.contains(event.target)) {
       this.visible = false;
     }
   }
 
   @HostListener('document:keydown', ['$event'])
-  onKeydown(event: KeyboardEvent) {
+  onKeydown(event: KeyboardEvent): void {
     if (this.visible && (event.key === 'Escape' || event.keyCode === ESCAPE)) {
       this.visible = false;
     }

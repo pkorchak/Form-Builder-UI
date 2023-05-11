@@ -14,14 +14,13 @@ export class EditableLabelComponent {
 
   @ViewChild('input', {static: true}) input: ElementRef;
 
-  selectInputContent($event) {
-    $event.target.select();
+  selectInputContent(event: FocusEvent): void {
+    (event.target as HTMLInputElement).select();
   }
 
-  public focusOnInput() {
+  public focusOnInput(): void {
     this.input.nativeElement.focus();
   }
-
 }
 
 export interface EditableLabelOptions {

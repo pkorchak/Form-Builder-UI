@@ -28,7 +28,7 @@ export class CreateFormComponent {
               private formStructureMapper: FormStructureMapper) {
   }
 
-  onShowFormPreviewClick(newFormStructure: any) {
+  onShowFormPreviewClick(newFormStructure: FormStructure): void {
     this.formStructure = this.formStructureMapper.map(newFormStructure);
     this.isInEditor = false;
   }

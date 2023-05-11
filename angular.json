@@ -34,6 +34,9 @@
             "styles": [
               "src/styles.less"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/"]
+            },
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -107,6 +110,9 @@
             "styles": [
               "src/styles.less"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/"]
+            },
             "scripts": []
           }
         },

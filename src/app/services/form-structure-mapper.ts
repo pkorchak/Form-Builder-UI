@@ -8,7 +8,7 @@ export class FormStructureMapper {
   constructor(private formElementsFactory: FormElementsFactory) {
   }
 
-  public map(jsonData: any): FormStructure {
+  public map(jsonData: FormStructure): FormStructure {
     const formStructure = new FormStructure();
     formStructure.columnsNum = jsonData.columnsNum || 1;
     formStructure.name = jsonData.name;

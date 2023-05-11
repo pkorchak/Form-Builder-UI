@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { AbstractFormElement } from '@model/form-elements/abstract-form-element';
+import { AbstractFormElement, FormElement } from '@model/form-elements/abstract-form-element';
 import { FormElementType } from '@model/form-element-type';
 import { CheckboxFormElement } from '@model/form-elements/checkbox-form-element';
 import { InputFormElement } from '@model/form-elements/input-form-element';
 import { DateFormElement } from '@model/form-elements/date-form-element';
 import { TextareaFormElement } from '@model/form-elements/textarea-form-element';
 
-const map = (object: any, elementInstance: AbstractFormElement) =>
-  Object.assign(elementInstance, ...Object.keys(object)
-    .map(key => ({[key]: (object[key])})));
+const map = (element: FormElement, elementInstance: AbstractFormElement) =>
+  Object.assign(elementInstance, ...Object.keys(element)
+    .map(key => ({[key]: (element[key])})));
 
 @Injectable({providedIn: 'root'})
 export class FormElementsFactory {
 
-  public createInstance(element: any): AbstractFormElement {
+  public createInstance(element: FormElement): AbstractFormElement {
     let elementInstance: AbstractFormElement;
 
     switch (element.type) {

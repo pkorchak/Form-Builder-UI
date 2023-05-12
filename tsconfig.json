@@ -11,7 +11,7 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -20,11 +20,20 @@
       "dom"
     ],
     "paths": {
-      "@styles/*": ["app/styles/*"],
-      "@widgets/*": ["app/widgets/*"],
-      "@services/*": ["app/services/*"],
-      "@model/*": ["app/model/*"]
-    }
+      "@styles/*": [
+        "app/styles/*"
+      ],
+      "@widgets/*": [
+        "app/widgets/*"
+      ],
+      "@services/*": [
+        "app/services/*"
+      ],
+      "@model/*": [
+        "app/model/*"
+      ]
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

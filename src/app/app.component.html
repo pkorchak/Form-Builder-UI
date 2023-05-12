@@ -12,15 +12,15 @@
     <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-menu-item nzMatchRouter title="Create Form">
         <i nz-icon nzType="form"></i>
-        <a routerLink="/create">Create Form</a>
+        <span routerLink="/create">Create Form</span>
       </li>
       <li nz-submenu nzOpen nzTitle="Pre-Built Forms" nzIcon="container" title="Pre-Built Forms">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a [routerLink]="['/pre-built', 'register']">Register</a>
+            <span [routerLink]="['/pre-built', 'register']">Register</span>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a [routerLink]="['/pre-built', 'shipping']">Shipping Information</a>
+            <span [routerLink]="['/pre-built', 'shipping']">Shipping Information</span>
           </li>
         </ul>
       </li>
@@ -38,7 +38,7 @@
         <button nz-button nzShape="circle"
                 class="create-form-btn"
                 routerLink="/create"
-                nz-tooltip nzTooltipTitle="Create Form"
+                nz-tooltip="Create Form"
                 nzTooltipPlacement="bottomRight">
           <i nz-icon nzType="form"></i>
         </button>

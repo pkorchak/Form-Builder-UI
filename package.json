@@ -17,7 +17,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.2.9",
-    "@angular/cdk": "^14.2.7",
+    "@angular/cdk": "^15.2.9",
     "@angular/common": "^15.2.9",
     "@angular/compiler": "^15.2.9",
     "@angular/core": "^15.2.9",
@@ -28,7 +28,7 @@
     "module-alias": "^2.2.2",
     "ng-mocks": "^14.10.0",
     "ng-zorro-antd": "^15.1.0",
-    "ngx-scrollbar": "10.0.1",
+    "ngx-scrollbar": "11.0.0",
     "rxjs": "^6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

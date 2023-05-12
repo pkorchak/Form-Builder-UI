@@ -9,6 +9,6 @@ import { FormControl } from '@angular/forms';
 })
 export class InputMockupComponent {
 
-  @Input() placeholderFormControl: FormControl;
+  @Input() placeholderFormControl: FormControl<string | null>;
 
 }

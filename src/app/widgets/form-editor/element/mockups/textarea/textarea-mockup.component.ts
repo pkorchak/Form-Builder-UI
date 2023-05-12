@@ -13,6 +13,6 @@ import { FormControl } from '@angular/forms';
 })
 export class TextareaMockupComponent {
 
-  @Input() placeholderFormControl: FormControl;
+  @Input() placeholderFormControl: FormControl<string | null>;
 
 }

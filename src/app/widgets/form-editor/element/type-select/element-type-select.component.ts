@@ -10,7 +10,7 @@ import { FormElementType } from '@model/form-element-type';
 })
 export class ElementTypeSelectComponent {
 
-  @Input() type: FormControl;
+  @Input() type: FormControl<FormElementType>;
 
   options = [
     {

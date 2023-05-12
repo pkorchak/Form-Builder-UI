@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormStructure } from '@model/form-structure';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-viewer',
@@ -16,7 +16,7 @@ export class FormViewerComponent implements OnInit, OnChanges {
 
   @Input() formStructure: FormStructure;
 
-  formGroup = new FormGroup({});
+  formGroup = new UntypedFormGroup({});
 
   columnWidth: string;
 

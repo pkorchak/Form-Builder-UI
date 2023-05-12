@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EditableLabelComponent } from '@widgets/form-editor/label/editable-label.component';
+import { FormElementType } from '@model/form-element-type';
 
 @Component({
   selector: 'app-editable-form-element',
@@ -10,22 +11,22 @@ import { EditableLabelComponent } from '@widgets/form-editor/label/editable-labe
 })
 export class EditableFormElementComponent implements OnChanges {
 
-  @Input() element: FormGroup;
+  @Input() element: FormGroup<FormElementControls>;
 
   @Output() deleteElement = new EventEmitter();
 
   @ViewChild(EditableLabelComponent) editableLabel: EditableLabelComponent;
 
-  placeholderFormControl: FormControl;
-  labelFormControl: FormControl;
-  typeFormControl: FormControl;
+  placeholderFormControl: FormControl<string>;
+  labelFormControl: FormControl<string>;
+  typeFormControl: FormControl<FormElementType>;
   required: boolean;
 
   ngOnChanges(): void {
-    this.placeholderFormControl = this.element.get('placeholder') as FormControl;
-    this.labelFormControl = this.element.get('label') as FormControl;
-    this.typeFormControl = this.element.get('type') as FormControl;
-    this.required = this.element.get('required')?.value;
+    this.placeholderFormControl = this.element.get('placeholder') as FormControl<string>;
+    this.labelFormControl = this.element.get('label') as FormControl<string>;
+    this.typeFormControl = this.element.get('type') as FormControl<FormElementType>;
+    this.required = this.element.get('required')?.value as boolean;
   }
 
   updateRequired(): void {
@@ -36,4 +37,11 @@ export class EditableFormElementComponent implements OnChanges {
   public focusOnLabel(): void {
     this.editableLabel.focusOnInput();
   }
+}
+
+export interface FormElementControls {
+  label: FormControl<string>;
+  type: FormControl<FormElementType>;
+  required: FormControl<boolean | null>;
+  placeholder: FormControl<string | null>;
 }

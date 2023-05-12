@@ -35,7 +35,9 @@
               "src/styles.less"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules/"]
+              "includePaths": [
+                "node_modules/"
+              ]
             },
             "scripts": [],
             "vendorChunk": true,
@@ -111,7 +113,9 @@
               "src/styles.less"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules/"]
+              "includePaths": [
+                "node_modules/"
+              ]
             },
             "scripts": []
           }
@@ -159,9 +163,10 @@
       }
     }
   },
-  "defaultProject": "form-builder-demo",
   "cli": {
     "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

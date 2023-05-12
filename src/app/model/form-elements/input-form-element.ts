@@ -16,6 +16,6 @@ export class InputFormElement extends AbstractFormElement {
       validators.push(Validators.minLength(6));
     }
 
-    this.formControl = new FormControl(null, validators);
+    this.formControl = new FormControl<string | null>(null, validators);
   }
 }

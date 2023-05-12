@@ -4,7 +4,7 @@ import { RegisterFormComponent } from './register/register-form.component';
 import { ShippingFormComponent } from './shipping/shipping-form.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'register'},
+  {path: '', pathMatch: 'prefix', redirectTo: 'register'},
   {path: 'register', component: RegisterFormComponent},
   {path: 'shipping', component: ShippingFormComponent},
 ];

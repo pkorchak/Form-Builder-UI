@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
 })
 export class EditableLabelComponent {
 
-  @Input() parentFormControl: FormControl;
+  @Input() parentFormControl: FormControl<string>;
   @Input() options: EditableLabelOptions = {};
 
   @ViewChild('input', {static: true}) input: ElementRef;

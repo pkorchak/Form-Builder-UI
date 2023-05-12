@@ -28,7 +28,7 @@ export abstract class AbstractFormElement implements FormElement {
   /**
    * Form control used in the generated reactive form
    */
-  formControl: FormControl;
+  formControl: FormControl<string | number | boolean | null>;
 
   abstract initFormControl(): void;
 }

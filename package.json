@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
-    "build": "ng build",
-    "build-for-prod": "ng build --configuration production",
+    "build": "ng build --configuration production",
+    "lint": "ng lint",
     "test": "ng test",
     "ci-test": "ng test --karma-config=karma-ci.conf.js",
-    "lint": "ng lint",
     "e2e": "set NODE_OPTIONS=--openssl-legacy-provider && ng e2e",
     "ci-e2e": "ng e2e --headless --no-watch",
     "cypress:open": "cypress open",

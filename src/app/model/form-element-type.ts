@@ -1,6 +1,6 @@
 export enum FormElementType {
-  SHORT_TEXT = 'short-text',
-  LONG_TEXT = 'long-text',
+  SHORT_TEXT = 'shortText',
+  LONG_TEXT = 'longText',
   CHECKBOX = 'checkbox',
   DATE = 'date',
   EMAIL = 'email',

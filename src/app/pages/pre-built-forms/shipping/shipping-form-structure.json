@@ -4,29 +4,29 @@
   "elements": [
     {
       "label": "First Name",
-      "type": "short-text",
+      "type": "shortText",
       "required": true,
       "placeholder": "Enter first name"
     },
     {
       "label": "Last Name",
-      "type": "short-text",
+      "type": "shortText",
       "required": true,
       "placeholder": "Enter last name"
     },
     {
       "label": "City",
-      "type": "short-text",
+      "type": "shortText",
       "required": true
     },
     {
       "label": "Street Address",
-      "type": "short-text",
+      "type": "shortText",
       "required": true
     },
     {
       "label": "Apt., Suite, Unit, Etc. (optional)",
-      "type": "short-text"
+      "type": "shortText"
     },
     {
       "label": "ZIP Code",
@@ -47,7 +47,7 @@
     },
     {
       "label": "Additional Information (optional)",
-      "type": "long-text"
+      "type": "longText"
     }
   ]
 }

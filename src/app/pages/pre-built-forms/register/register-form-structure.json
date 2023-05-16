@@ -15,13 +15,13 @@
     },
     {
       "label": "First Name",
-      "type": "short-text",
+      "type": "shortText",
       "required": true,
       "placeholder": "Enter first name"
     },
     {
       "label": "Last Name",
-      "type": "short-text",
+      "type": "shortText",
       "placeholder": "Enter last name"
     },
     {

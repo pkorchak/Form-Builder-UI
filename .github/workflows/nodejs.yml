@@ -11,23 +11,35 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [16.x]
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
-      - run: npm run ci-test
-      - run: npm run ci-e2e
+      - name: Install dependencies
+        run: npm ci
+      - name: Perform static code analysis
+        run: npm run lint
+      - name: Build app
+        run: npm run build
+      - name: Run unit tests
+        run: npm run ci-test
+      - name: Run end-to-end tests
+        run: npm run ci-e2e
         env:
           CI: true
+      - name: Upload to S3 bucket
+        if: github.branch == 'main'
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}

@@ -1,4 +1,7 @@
 <nz-layout class="app-layout">
+  <app-auth *ngIf="isSigningIn"
+            (signedIn)="onSignedIn()">
+  </app-auth>
   <nz-sider class="menu-sidebar"
             nzCollapsible
             nzWidth="256px"
@@ -30,18 +33,34 @@
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'">
-            </i>
+          <i class="trigger"
+             nz-icon
+             [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'">
+          </i>
         </span>
-        <button nz-button nzShape="circle"
-                class="create-form-btn"
-                routerLink="/create"
-                nz-tooltip="Create Form"
-                nzTooltipPlacement="bottomRight">
-          <i nz-icon nzType="form"></i>
-        </button>
+        <ng-container *ngIf="isSignedIn then signOutBtnTmp else signInBtnTmp"></ng-container>
+        <ng-template #signOutBtnTmp>
+          <button nz-button
+                  class="sign-out-btn"
+                  (click)="signOut()">
+            Sign Out
+          </button>
+        </ng-template>
+        <ng-template #signInBtnTmp>
+          <div>
+            <button nz-button
+                    class="sign-in-btn"
+                    (click)="isSigningIn = true">
+              Sign In
+            </button>
+            <button nz-button
+                    nzType="primary"
+                    class="sign-up-btn"
+                    (click)="isSigningIn = true">
+              Sign Up
+            </button>
+          </div>
+        </ng-template>
       </div>
     </nz-header>
     <nz-content>

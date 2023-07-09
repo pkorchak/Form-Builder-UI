@@ -1,4 +1,4 @@
-# Form Builder Demo
+# Form Builder UI
 
 JSON-based form builder Angular application. Uses [ng-zorro-antd](https://ng.ant.design/) as a UI component library.
 

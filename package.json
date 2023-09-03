@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve --proxy-config=proxy.config.json",
     "build": "ng build --configuration production",
     "lint": "ng lint",
     "test": "ng test",
@@ -29,7 +29,7 @@
     "ng-mocks": "^14.10.0",
     "ng-zorro-antd": "^16.0.0",
     "ngx-scrollbar": "12.0.0",
-    "rxjs": "^6.5.5",
+    "rxjs": "^7.8.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.13.0"
   },

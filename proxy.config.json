@@ -1,7 +1,7 @@
 {
   "/api/*": {
-    "target": " https://03z6w06wwd.execute-api.us-east-1.amazonaws.com/Stage",
-    "secure": false,
+    "target": "https://aq4isfk378.execute-api.us-east-1.amazonaws.com/Prod",
+    "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
       "^/api": ""

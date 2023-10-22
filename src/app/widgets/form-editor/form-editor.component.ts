@@ -2,7 +2,9 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  DestroyRef,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnInit,
@@ -17,6 +19,10 @@ import {
   EditableFormElementComponent,
   FormElementControls
 } from '@widgets/form-editor/element/editable-form-element.component';
+import { FormsHttpService } from '@services/api/forms-http.service';
+import { FormCreateRqDto } from '@model/dto/rq/form-create-rq-dto';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormElement } from '@model/form-elements/abstract-form-element';
 
 @Component({
   selector: 'app-form-editor',
@@ -42,8 +48,11 @@ export class FormEditorComponent implements OnInit, OnChanges {
   columnWidth: string;
   formElements = new FormArray<FormGroup<FormElementControls>>([]);
 
+  private destroyRef = inject(DestroyRef);
+
   constructor(private fb: FormBuilder,
-              private cdr: ChangeDetectorRef) {
+              private cdr: ChangeDetectorRef,
+              private formsHttpService: FormsHttpService) {
   }
 
   ngOnInit(): void {
@@ -91,6 +100,33 @@ export class FormEditorComponent implements OnInit, OnChanges {
 
   deleteElement(index: number): void {
     this.formElements.removeAt(index);
+  }
+
+  save(): void {
+    this.formsHttpService.create(this.mapFormCreateRqDto())
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        // TODO Show notification with save result
+      });
+  }
+
+  private mapFormCreateRqDto(): FormCreateRqDto {
+    return {
+      name: this.formName.value,
+      columnsNum: this.columnsNum.value,
+      elements: [
+        ...this.formElements.controls.map(element => this.mapFormElement(element))
+      ]
+    } as FormCreateRqDto
+  }
+
+  private mapFormElement(element: FormGroup<FormElementControls>): FormElement {
+    return {
+      label: element.get('label')?.value,
+      type: element.get('type')?.value,
+      required: element.get('required')?.value || undefined,
+      placeholder: element.get('placeholder')?.value || undefined,
+    } as FormElement;
   }
 }
 

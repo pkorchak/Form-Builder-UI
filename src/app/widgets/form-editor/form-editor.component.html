@@ -30,11 +30,20 @@
 
   <button nz-button
           class="final-action-btn"
-          nzType="primary"
+          nzType="secondary"
           nzShape="round"
           [disabled]="form.invalid"
           (click)="showFormPreviewClick.emit(form.value)">
     <i nz-icon nzType="eye"></i> Show form preview
+  </button>
+
+  <button nz-button
+          class="final-action-btn save-btn"
+          nzType="primary"
+          nzShape="round"
+          [disabled]="form.invalid"
+          (click)="save()">
+    <i nz-icon nzType="save"></i> Save
   </button>
 </app-form-container>
 

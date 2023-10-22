@@ -4,25 +4,23 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class HttpService {
-
-  private headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient,
               private router: Router) {
   }
 
   public post(url: string, body: unknown, params?: HttpParams): Observable<unknown> {
-    return this.handleResponse(this.http.post(url, body, {headers: this.headers, ...params}));
+    return this.handleResponse(this.http.post(url, body, { headers: this.buildHeaders(), ...params }));
   }
 
   public get(url: string, params?: HttpParams): Observable<unknown> {
-    return this.handleResponse(this.http.get(url, {headers: this.headers, ...params}));
+    return this.handleResponse(this.http.get(url, { headers: this.buildHeaders(), ...params }));
   }
 
   public patch(url: string, body: unknown, params?: HttpParams): Observable<unknown> {
-    return this.handleResponse(this.http.patch(url, body, {headers: this.headers, ...params}));
+    return this.handleResponse(this.http.patch(url, body, { headers: this.buildHeaders(), ...params }));
   }
 
   private handleResponse(response: Observable<unknown>): Observable<unknown> {
@@ -34,6 +32,14 @@ export class HttpService {
       this.router.navigateByUrl('/login');
     }
     // TODO Show notification with error text for the user
-    throw new Error(`${error.statusText}\n${error.message}`);
+    throw new Error(`${ error.statusText }\n${ error.message }`);
+  }
+
+  private buildHeaders() {
+    const headers = {};
+    const token = localStorage.getItem('token');
+    if (token) headers['Authorization'] = token;
+
+    return headers;
   }
 }

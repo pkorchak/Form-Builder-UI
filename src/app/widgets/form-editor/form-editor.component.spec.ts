@@ -12,6 +12,7 @@ import { MockComponents } from 'ng-mocks';
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy, DebugElement } from '@angular/core';
 import { AbstractFormElement } from '@model/form-elements/abstract-form-element';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('FormEditorComponent', () => {
   let component: FormEditorComponent;
@@ -42,7 +43,8 @@ describe('FormEditorComponent', () => {
       ],
       imports: [
         ReactiveFormsModule,
-        NzInputNumberModule
+        NzInputNumberModule,
+        HttpClientTestingModule
       ]
     })
       .overrideComponent(FormEditorComponent, {
